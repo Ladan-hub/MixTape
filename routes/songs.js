@@ -1,0 +1,1 @@
+const { requireAuth } = require('../auth');
