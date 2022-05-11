@@ -1,0 +1,38 @@
+
+'use strict';
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.bulkInsert('Users', [
+      {
+        username: 'my_friend',
+        email: 'sanjose@gmail.com',
+        hashedpassword: '$2a$10$ZGN2wlgBH7ctWJ/A5fNFCuMWq9nDyUdyyLDRZrAKsrxhswdIOt3Me'
+      },
+      {
+        username: 'sunnyvale',
+        email: 'sunnyvale@gmail.com',
+        hashedpassword: '$2a$10$YNTLp394wZUouA4IcQlweeDtxHceRqmVaWWqXSVLyIoIpKCJcxngC'
+      },
+      {
+        username: 'cupertino',
+        email: 'cupertino@gmail.com',
+        hashedpassword: '$2a$10$cWYPi8mgec02G5JGD3b8Zuqgg9GlRDqzEhJQXCj5gYDjGByrMR.xu'
+      },
+      {
+        username: 'santaclara',
+        email: 'santaclara@gmail.com',
+        hashedpassword: '$2a$10$7KjjMP/J.5AMkXjD.VHmjuUUwbAubBzMVUj/6OJV0rbzItijOAYuC'
+      },
+      {
+        username: 'unioncity',
+        email: 'unioncity@gmail.com',
+        hashedpassword: '$2a$10$7xY4GXCbJ8ApF56feXn5Q.vnXH31ej2wp33kFbRxOufPjWCNseiVK'
+      }
+    ], {});
+  },
+
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.bulkDelete('Users', null, {});
+  }
+};
