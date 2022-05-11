@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Song.associate = function(models) {
     // associations can be defined here
+    Song.hasMany(models.Rating, { foreignKey: 'songId' })
   };
   return Song;
 };
