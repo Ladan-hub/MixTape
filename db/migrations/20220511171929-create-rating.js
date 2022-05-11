@@ -12,11 +12,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      songId: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references: { model: 'Songs'}
-      },
       content: {
         type: Sequelize.TEXT
       },
