@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const TapeName = sequelize.define('TapeName', {
+  const Tape = sequelize.define('Tape', {
     tapeName: DataTypes.INTEGER,
     userId: DataTypes.INTEGER
   }, {});
-  TapeName.associate = function(models) {
+  Tape.associate = function(models) {
     Tape.belongsTo(models.User,
       {
           foreignKey: 'userId',
@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       {
           foreignKey: 'tapeId',
           through: 'Playlists',
-          otherId: 'userId'
+          otherId: 'songId'
       })
   };
-  return TapeName;
+  return Tape;
 };
