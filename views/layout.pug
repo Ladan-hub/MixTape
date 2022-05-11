@@ -36,7 +36,7 @@ html
       div(class='home-playlist-bar')
       if locals.authenticated
         div(class='nav-btn')
-          a(href='/home' buttonclass='home') HOME
+          a(href='/home' class='home') HOME
           a(href='/users/:id/playlist' class='playlist') PLAYLIST
         div(class='info-btn')
           span(class='login-status') Welcome #{user.username}!
