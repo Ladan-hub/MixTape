@@ -5,13 +5,12 @@ module.exports = (sequelize, DataTypes) => {
     listenCount: DataTypes.INTEGER,
     releaseDate: DataTypes.DATE,
     artistName: DataTypes.STRING,
-    album: DataTypes.STRING,
+    albumName: DataTypes.STRING,
     songImg: DataTypes.STRING,
     youtubeURL: DataTypes.STRING
   }, {});
   Song.associate = function(models) {
-    // associations can be defined here
-    Song.hasMany(models.Rating, 
+    Song.belongsToMany(models.Rating, 
       {
         foreignKey: 'songId',
         through: 'RatingSongs',

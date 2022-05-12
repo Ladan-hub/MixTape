@@ -8,10 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      TapeSongs: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
       songId: {
         allowNull: false,
         type: Sequelize.INTEGER,

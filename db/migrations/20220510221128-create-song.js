@@ -20,7 +20,7 @@ module.exports = {
       artistName: {
         type: Sequelize.STRING
       },
-      album: {
+      albumName: {
         type: Sequelize.STRING
       },
       songImg: {

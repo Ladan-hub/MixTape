@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       {
           foreignKey: 'userId',
       })
-    Tape.hasMany(models.Song,
+    Tape.belongsToMany(models.Song,
       {
           foreignKey: 'tapeId',
           through: 'Playlists',
