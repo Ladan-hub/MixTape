@@ -1,6 +1,8 @@
 const express = require("express");
+//const { mapOptionFieldNames } = require("sequelize/types/lib/utils");
 const app = express();
-const { Song } = require("../db/models");
+//const { Song } = require("../db/models");
+const db = require('../db/models');
 const router = express.Router();
 
 
@@ -9,19 +11,19 @@ const router = express.Router();
 router.get("/home", async function (req, res, next) {
   // 1. query for the data -> the joint table which user has which songs?
 
-  const popular = await Song.findAll({
-    include: songImg,
+  const topHits = await db.Song.findAll({
     limit: 8,
     order: [["listenCount", "DESC"]],
   });
+  //console.log(topHits[0].songImg,"HERE");
 
-  const current = await Song.findAll({
-    include: songImg,
+  const recentReleases = await db.Song.findAll({
     limit: 8,
     order: [["releaseDate", "DESC"]],
   });
 
-  res.render("index", { popular , current });
+  res.render("home", {topHits, recentReleases});
+  
 });
 
   

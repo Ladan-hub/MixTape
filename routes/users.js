@@ -80,7 +80,7 @@ router.post('/register', csrfProtection, userValidators,
     }
   }));
 
-router.get('/login', csrfProtection, (req, res) => {
+router.get('/', csrfProtection, (req, res) => {
   res.render('user-login', {
     title: 'Login',
     csrfToken: req.csrfToken(),
@@ -105,25 +105,26 @@ router.post('/login', csrfProtection, loginValidators,
     } = req.body;
     let errors = [];
     const validatorErrors = validationResult(req);
+    const user = await db.User.findOne({ where: { email: emailAddress } });
     if (validatorErrors.isEmpty()) {
-      const user = await db.User.findOne({ where: { email: emailAddress } });
       if (user !== null) {
         const passwordMatch = await bcrypt.compare(password, user.hashedpassword.toString());
         if (passwordMatch) {
           loginUser(req, res, user);
-          return res.redirect('/login');
+          return res.redirect('/home');
         }
       }
       errors.push('Login failed for the provided email address and password');
     } else {
       errors = validatorErrors.array().map((error) => error.msg);
+      res.render('user-login', {
+        title: 'Login',
+        emailAddress: user.email,
+        errors,
+        csrfToken: req.csrfToken(),
+      });
     }
-    res.render('user-login', {
-      title: 'Login',
-      emailAddress: user.email,
-      errors,
-      csrfToken: req.csrfToken(),
-    });
+
   }));
 
 

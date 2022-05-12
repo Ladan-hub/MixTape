@@ -1,0 +1,35 @@
+
+link(rel='stylesheet' href='/stylesheets/home.css')
+block content
+     section
+        .section-heading
+          .grid-container
+            .grid-x
+              .cell
+                h2 Top Hits this Week
+        .grid-container
+          .grid-x.grid-padding-x
+            .cell
+              each topHit in topHits
+                img(class="tophits" src=topHit.songImg) 
+                topHit.name 
+     section
+       .section-heading
+         .grid-container
+           .grid-x
+             .cell 
+               h2 Recently Released 
+       .grid-container
+         .grid-x.grid-padding-x
+           .cell
+             each recentRelease in recentReleases
+               img(class="recentReleases" src=recentRelease.songImg)
+     section
+       .section-heading
+         .grid-container 
+           .grid-x 
+             .cell
+       .grid-container 
+         .grid-x.grid-padding-x 
+           .cell
+
