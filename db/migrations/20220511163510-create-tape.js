@@ -1,33 +1,18 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Songs', {
+    return queryInterface.createTable('Tapes', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
-      },
-      listenCount: {
+      tapeName: {
         type: Sequelize.INTEGER
       },
-      releaseDate: {
-        type: Sequelize.DATE
-      },
-      artistName: {
-        type: Sequelize.STRING
-      },
-      albumName: {
-        type: Sequelize.STRING
-      },
-      songImg: {
-        type: Sequelize.STRING
-      },
-      youtubeURL: {
-        type: Sequelize.STRING
+      userId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -40,6 +25,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Songs');
+    return queryInterface.dropTable('Tapes');
   }
 };
