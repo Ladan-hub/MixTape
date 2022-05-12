@@ -9,6 +9,7 @@ const { sessionSecret } = require('./config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const songsRouter = require('./routes/songs');
 const homeRouter = require('./routes/home');
 const csrf = require('csurf');
 const { restoreUser } = require('./auth');
@@ -45,6 +46,7 @@ store.sync();
 // app.use('/', indexRouter);
 app.use(restoreUser);
 app.use(usersRouter);
+app.use(songsRouter);
 
 app.use(homeRouter);
 
@@ -64,5 +66,8 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
 
 module.exports = app;
