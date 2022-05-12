@@ -9,6 +9,7 @@ const { sessionSecret } = require('./config');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const songsRouter = require('./routes/songs');
 const csrf = require('csurf');
 const { restoreUser } = require('./auth');
 
@@ -44,6 +45,7 @@ store.sync();
 // app.use('/', indexRouter);
 app.use(restoreUser);
 app.use(usersRouter);
+app.use(songsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -60,5 +62,8 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
 
 module.exports = app;
