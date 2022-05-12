@@ -13,22 +13,37 @@ const taskNotFoundError = (id) => {
     return err;
   };
 
-// router.get('/song', asyncHandler(async(req, res) => {
 
-//   res.render("song")
-// }))
 
 router.get('/songs/:id', asyncHandler(async(req, res) => {
+    // const user = req.session.auth
+    // console.log(user)
+
+    // const id = parseInt(user.userId)
+    // const playlist = await db.User.findByPk(id, {
+    //         include: {
+    //             model: db.Tape,
+    //             include: { model: db.Playlist}
+    //         }
+    //       });
+    // console.log(playlist)
+
     const song = await db.Song.findOne({
         where: {
             id: req.params.id,
         },
     });
 
+    const tapes = await db.Tape.findAll({
+      where:{
+         userId: req.session.auth.userId
+      }
+    })
+
     if(song){
-        res.render("song", { id: req.params.id, song })
+        res.render("song", { id: req.params.id, song, tapes })
     }else{
-        next(taskNotFoundError(req.params.id));
+        // next(taskNotFoundError(req.params.id));
     }
   }));
 

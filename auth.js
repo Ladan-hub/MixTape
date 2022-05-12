@@ -19,6 +19,7 @@ const restoreUser = async (req, res, next) => {
         const { userId } = req.session.auth;
         try {
             const user = await db.User.findByPk(userId);
+            console.log(user)
             if (user) {
                 res.locals.authenticated = true;
                 res.locals.user = user;
@@ -39,8 +40,3 @@ module.exports = {
     requireAuth,
     restoreUser,
 };
-
-
-
-
-

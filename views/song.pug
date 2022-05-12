@@ -9,7 +9,7 @@ block content
         div(class='row')
             div(class='col-md-6')
                 div(class='item')
-                    img(src='https://upload.wikimedia.org/wikipedia/en/e/e3/Alice_Merton_No_Roots.jpg')
+                    img(src=`${song.songImg}`)
             div(class='col-md-6')
                 div(class='song-detail')
                     div(class='song-info')
@@ -34,10 +34,9 @@ block content
                 div(class='playlist-btn')
                     form(action="#" class='display-flex')
                         label(for='add') Add to Playlist
-                        select(name='playlist-dropdown')
-                            option(value='Listened' id=`${song.id}`) Listened
-                            option(value='Interested' id=`${song.id}`) Interested
-                            option add a new playlist
-                        //- button(type='submit' class='playlist') Add to Playlist
+                        select(name='playlist-button')
+                            each tape in tapes
+                                option(id=`${tape.id}-${song.id}`)=tape.tapeName
+                        button(type='submit' class='playlist') Add to Playlist
                 div(class='play-btn')
-                    iframe(width="1000" height="500" src="https://www.youtube.com/embed/QDYDRA5JPLE" frameborder="0" allowfullscreen)
+                    iframe(width="1000" height="500" src=`${song.youtubeURL}` frameborder="0" allowfullscreen)

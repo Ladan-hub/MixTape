@@ -14,10 +14,23 @@ module.exports = {
     */
       return queryInterface.bulkInsert('Tapes', [{
         tapeName: 'banana',
-        userId: 1,
+        userId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
-      }], {});
+      },
+      {
+        tapeName: 'apple',
+        userId: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        tapeName: 'orange',
+        userId: 4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+    ], {});
 
   },
 
