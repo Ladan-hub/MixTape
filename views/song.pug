@@ -1,0 +1,48 @@
+extends layout.pug
+
+include utils.pug
+block content
+    div(class='container')
+        div(class='heading-section')
+            h2 Find Music and Save Music
+        div(class='row')
+            div(class='col-md-6')
+                div(class='item')
+                    img
+            div(class='col-md-6')
+                div(class='song-detail')
+                    div(class='song-info')
+                        div(class='song-name') #{song.Id}
+                        div(class='rating')
+                            div(class='rate')
+                                label(for='star5') 5 stars
+                                input(type='radio' name='rate' value='5' checked)
+                                label(for='star4') 4 stars
+                                input(type='radio' name='rate' value='4' checked)
+                                label(for='star3') 3 stars
+                                input(type='radio' name='rate' value='3' checked)
+                                label(for='star2') 2 stars
+                                input(type='radio' name='rate' value='2' checked)
+                                label(for='star1') 1 stars
+                                input(type='radio' name='rate' value='1' checked)
+                        div(class='artistname')
+                            p artistname
+                p albumname
+                p release date,
+                p listen count
+                div(class="row")
+                    div(class='col-md-6')
+                        label(for='size') Listen Status
+                        select(class='form-control' name='status')
+                            option Listened
+                            option Interested
+                    div(class='col-md-6')
+                        label(for="playist-drop")  Playlist
+                        select(name='playlist' class='playlist-select')
+                div(class='create-btn')
+                    label(for='add') New Playlist
+                    form(action="#" class='display-flex')
+                        div(class='add-btn')
+                        button(type='submit' class='playlist') Add to Playlist
+                div(class='play-btn')
+                    p Play Music Link
