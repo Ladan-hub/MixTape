@@ -1,7 +1,19 @@
+.recentReleases {
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+}
+
+.tophits {
+    height: 200px;
+    width: 200px;
+    margin: 15px;
+}
+
 section {
     position: relative;
     display: flex;
-  float: right;
+    float: right;
     width: 79%;
     flex-direction: column;
     padding: 0;
@@ -22,7 +34,7 @@ section .section-heading {
     position: sticky;
     top: 70px;
     width: 100%;
-  height: 60px;
+    height: 60px;
     background-color: rgba(245, 245, 245, 0.3);
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
     z-index: 9996;

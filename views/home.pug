@@ -10,25 +10,26 @@ block content
         .grid-container
           .grid-x.grid-padding-x
             .cell
-              p to be added
+              each topHit in topHits
+                img(class="tophits" src=topHit.songImg) 
+                topHit.name 
      section
        .section-heading
          .grid-container
            .grid-x
-             .cell
-               h2 Recently Released
+             .cell 
+               h2 Recently Released 
        .grid-container
          .grid-x.grid-padding-x
            .cell
-             p songssssssss
+             each recentRelease in recentReleases
+               img(class="recentReleases" src=recentRelease.songImg)
      section
        .section-heading
          .grid-container 
            .grid-x 
              .cell
-               h2 Keep Exploring
        .grid-container 
          .grid-x.grid-padding-x 
            .cell
-             p asdfghjkhljhkgl
 
