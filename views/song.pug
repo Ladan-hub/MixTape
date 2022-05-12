@@ -13,7 +13,7 @@ block content
             div(class='col-md-6')
                 div(class='song-detail')
                     div(class='song-info')
-                        div(class='song-name') song
+                        div(class='song-name') #{song.name}
                         div(class='rating')
                             div(class='rate')
                                 label(for='star5') 5 stars
@@ -27,24 +27,17 @@ block content
                                 label(for='star1') 1 stars
                                 input(type='radio' name='rate' value='1' checked)
                         div(class='artistname')
-                            p artistname
-                p albumname
-                p release date,
-                p listen count
-                div(class="row")
-                    div(class='col-md-6')
-                        label(for='size') Listen Status
-                        select(class='form-control' name='status')
-                            option Listened
-                            option Interested
-                    div(class='col-md-6')
-                        label(for="playist-drop")  Playlist
-                        select(name='playlist' class='playlist-select')
-                div(class='create-btn')
-                    label(for='add') New Playlist
+                            p #{song.artistName}
+                p Album: #{song.albumName}
+                p Release Date: #{song.releaseDate}
+                p Listen Count: #{song.listenCount}
+                div(class='playlist-btn')
                     form(action="#" class='display-flex')
-                        div(class='add-btn')
-                        button(type='submit' class='playlist') Add to Playlist
+                        label(for='add') Add to Playlist
+                        select(name='playlist-dropdown')
+                            option(value='Listened' id=`${song.id}`) Listened
+                            option(value='Interested' id=`${song.id}`) Interested
+                            option add a new playlist
+                        //- button(type='submit' class='playlist') Add to Playlist
                 div(class='play-btn')
                     iframe(width="1000" height="500" src="https://www.youtube.com/embed/QDYDRA5JPLE" frameborder="0" allowfullscreen)
-                
