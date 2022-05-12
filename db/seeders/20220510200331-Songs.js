@@ -214,7 +214,7 @@ module.exports = {
           releaseDate: '2016-12-02',
           artistName: "Alice Merton",
           albumName: "Mint +4",
-          songImg: "https://en.wikipedia.org/wiki/No_Roots_(song)#/media/File:Alice_Merton_No_Roots.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b2732ddeff249efc594c59d25bcc",
           youtubeURL: "https://www.youtube.com/embed/PUdyuKaGQd4&ab_channel=AliceMerton",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -225,7 +225,7 @@ module.exports = {
           releaseDate: '2021-09-27',
           artistName: "Sia",
           albumName: "This Is Acting",
-          songImg: "https://i.ytimg.com/embed/vi/cxjvTXo9WWM/maxresdefault.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b2738b3b51ce7fb80055c85c71e6",
           youtubeURL: "https://www.youtube.com/embed/YaEG2aWJnZ8",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -236,7 +236,7 @@ module.exports = {
           releaseDate: '2021-09-27',
           artistName: "Shawn Mendes",
           albumName: "Stitches",
-          songImg: "https://i.ytimg.com/embed/vi/DqO1lLavWGo/maxresdefault.jpg",
+        songImg: "https://i.scdn.co/image/ab67616d0000b273908f7df282edee5f2be63121",
           youtubeURL: "https://www.youtube.com/embed/VbfpW0pbvaU&ab_channel=ShawnMendesVEVO",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -247,7 +247,7 @@ module.exports = {
           releaseDate: '2012-06-10',
           artistName: "Maroon 5",
           albumName: "Jordi",
-          songImg: "https://i.ytimg.com/embed/an/U05fwua9-D4/13147714373421743624_mq.jpg?v=60c35156",
+          songImg: "https://i.scdn.co/image/ab67616d0000b27391dab6f19c1eebff49470fcehttps://i.scdn.co/image/ab67616d0000b27391dab6f19c1eebff49470fce",
           youtubeURL: "https://www.youtube.com/embed/U05fwua9-D4&ab_channel=Maroon5VEVO",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -258,7 +258,7 @@ module.exports = {
           releaseDate: '2021-07-30',
           artistName: "Billie Eilish",
           albumName: "Happier Than Ever",
-          songImg: "https://i.ytimg.com/embed/vi/NSTUVHsb9xw/maxresdefault.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b2732a038d3bf875d23e4aeaa84e",
           youtubeURL: "https://www.youtube.com/embed/5GJWxDKyk3A&ab_channel=BillieEilishVEVO",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -269,7 +269,7 @@ module.exports = {
           releaseDate: '2021-07-15',
           artistName: "Imagine Dragons",
           albumName: "Hello Autumn 2021",
-          songImg: "https://upload.wikimedia.org/wikipedia/en/b/b2/Wrecked_song_cover.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b273ec182939cba3386ddcb93069",
           youtubeURL: "https://www.youtube.com/embed/Y2NkuFIlLEo&ab_channel=ImagineDragonsVEVO",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -280,7 +280,7 @@ module.exports = {
           releaseDate: '2019-06-24',
           artistName: "Tones And I",
           albumName: "Ultratop Hit Connection Best Of 2019.3",
-          songImg: "https://i.ytimg.com/embed/vi/Hx4nWW9z0ig/maxresdefault.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b27338802659d156935ada63c9e3",
           youtubeURL: "https://www.youtube.com/embed/q0hyYWKXF0Q&ab_channel=TonesAndI",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -291,7 +291,7 @@ module.exports = {
           releaseDate: '2018-06-04',
           artistName: "Alec Benjamin",
           albumName: "Narrated For You",
-          songImg: "https://i.ytimg.com/embed/vi/jLNrvmXboj8/maxresdefault.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b27309a88ba53f188d4e09a11b5c",
           youtubeURL: "https://www.youtube.com/embed/50VNCymT-Cs&ab_channel=AlecBenjamin",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -302,7 +302,7 @@ module.exports = {
           releaseDate: '2020-04-14',
           artistName: "Ava Max",
           albumName: "Heaven & Hell",
-          songImg: "https://i.ytimg.com/embed/an/2EfE0vhxt1o/43ae7069-b9ee-4ba8-bb5e-0883067c2a71_mq.jpg?v=5deffdc4",
+          songImg: "https://i.scdn.co/image/ab67616d0000b2739dafceda0875d6a7b39f4eea",
           youtubeURL: "https://www.youtube.com/embed/PKWHYLtmAGA&ab_channel=AvaMax",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -313,7 +313,7 @@ module.exports = {
           releaseDate: '2019-10-22',
           artistName: "Selena Gomez",
           albumName: "Rare",
-          songImg: "https://i.ytimg.com/embed/vi/KE12jhXAdws/maxresdefault.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b2731802a56bb1927590b91677bd",
           youtubeURL: "https://www.youtube.com/embed/zlJDTxahav0",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -324,7 +324,7 @@ module.exports = {
           releaseDate: '2022-01-20',
           artistName: "Charlie Puth",
           albumName: "Light Switch",
-          songImg: "https://i.ytimg.com/embed/vi/oW5vH7y76yc/hqdefault.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b273c7c579c9b540f56584909d28",
           youtubeURL: "https://www.youtube.com/embed/WFsAon_TWPQ&ab_channel=CharliePuth",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -335,7 +335,7 @@ module.exports = {
           releaseDate: '2022-01-20',
           artistName: "The Weeknd",
           albumName: "Dawn FM",
-          songImg: "https://i.ytimg.com/embed/vi/2fDzCWNS3ig/maxresdefault.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b273d766cd2d2bb125f58ef22c22",
           youtubeURL: "https://www.youtube.com/embed/2fDzCWNS3ig&ab_channel=TheWeekndVEVO",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -346,7 +346,7 @@ module.exports = {
           releaseDate: '2021-07-22',
           artistName: "Camila Cabello",
           albumName: "Familia",
-          songImg: "https://i.ytimg.com/embed/vi/iFPkd-7AcDM/maxresdefault.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b273d24bb6aa36842e45bdd3d1cc",
           youtubeURL: "https://www.youtube.com/embed/iFPkd-7AcDM&ab_channel=CamilaCabelloVEVO",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -357,7 +357,7 @@ module.exports = {
           releaseDate: '2022-04-01',
           artistName: "OneRepublic & Gryffin",
           albumName: "You Were Loved",
-          songImg: "https://i.ytimg.com/embed/vi/8d9Ma7vp7Sc/maxresdefault.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b273a25cacf9e788e7c575e8586c",
           youtubeURL: "https://www.youtube.com/embed/8d9Ma7vp7Sc&ab_channel=GryffinVEVO",
           createdAt: new Date(),
           updatedAt: new Date()
@@ -368,7 +368,7 @@ module.exports = {
           releaseDate: '2022-04-08',
           artistName: "Lauv",
           albumName: "All 4 Nothing (I'm So In Love)",
-          songImg: "https://i.ytimg.com/embed/vi/AH8b7EynJ60/maxresdefault.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b2736c0d1afe9e7aa849b58cced5",
           youtubeURL: "https://www.youtube.com/embed/AH8b7EynJ60&ab_channel=Lauv",
           createdAt: new Date(),
           updatedAt: new Date()
