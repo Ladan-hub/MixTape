@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Tape = sequelize.define('Tape', {
-    tapeName: DataTypes.INTEGER,
+    tapeName: DataTypes.STRING,
     userId: DataTypes.INTEGER
   }, {});
   Tape.associate = function(models) {

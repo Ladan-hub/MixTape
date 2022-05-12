@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       tapeName: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       userId: {
         type: Sequelize.INTEGER
