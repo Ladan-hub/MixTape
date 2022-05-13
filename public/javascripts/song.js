@@ -1,49 +1,38 @@
 
-const db = require('../db/models');
 
 
-const playlist = document.querySelector('.playlist')
+
+const playlists = document.querySelectorAll('.playlist-button')
 
 // assume the class of button is playlist-btn
 //when user hit 'add to playlist' button, add it to the database playlist
+for(let i = 0; i < playlists.length; i++){
+    const button = playlists[i];
 
-document.addEventListener("DOMContentLoaded", async () => {
+        button.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                const res = await fetch(`/songs/${e.target.id}`,{
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                });
 
-    playlist.addEventListener('click', async(e) => {
-        e.preventDefault();
-        try {
-            const res = await fetch(`http://localhost:8080/song/${id}`,{
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({body})
-            });
-
-            if(!res.ok){
-                throw res;
+                if(!res.ok){
+                    throw res;
+                }
+            } catch(e) {
+                // custom error handler?
+                console.log(e)
             }
-        } catch(e) {
-            console.log(e)
-        }
+
+        })
+
+}
 
 
 
 
 
-    })
-
-  });
-
-
-
-
-
-
-// rating.addEventListener('click', async(e) => {
-//     e.preventDefault();
-//     const rating = await db.rating.create({ songId: req.song.id, tapeId: req.tape.id })
-//     res.json({ playlist })
-
-// })
 
 // review.addEventListener('click', async(e) => {
 //     e.preventDefault();

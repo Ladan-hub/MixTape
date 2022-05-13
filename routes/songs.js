@@ -13,12 +13,12 @@ const taskNotFoundError = (id) => {
     return err;
   };
 
-router.get('/song', asyncHandler(async(req, res) => {
+// router.get('/song', asyncHandler(async(req, res) => {
 
-  res.render("song")
-}))
+//   res.render("song")
+// }))
 
-router.get('/song/:id', asyncHandler(async(req, res) => {
+router.get('/songs/:id', asyncHandler(async(req, res) => {
     const song = await db.Song.findOne({
         where: {
             id: req.params.id,
@@ -26,20 +26,21 @@ router.get('/song/:id', asyncHandler(async(req, res) => {
     });
 
     if(song){
-        res.render("song", { id: req.params.id, song }) ////////
+        res.render("song", { id: req.params.id, song })
     }else{
         next(taskNotFoundError(req.params.id));
     }
   }));
 
-router.post('/song/:id', asyncHandler(async(req, res) => {
+router.post('/songs/:id', asyncHandler(async(req, res) => {
 
     const songId = req.params.id;
-    const tapeId = await Tape.findByPk(songId, {
-        include: Playlist,
-    });
-    const new_playlist = await db.playlist.create({ songId, tapeId })
 
+    // const tapeId = await Tape.findByPk(songId, {
+    //     include: Playlist,
+    // });
+    const new_playlist = await db.Playlist.create({ songId, tapeId: 1 })
+    console.log(new_playlist)
   }));
 
   // get the userId through the session, query the playlist through user table

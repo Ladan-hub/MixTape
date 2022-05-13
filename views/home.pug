@@ -1,5 +1,6 @@
-
-link(rel='stylesheet' href='/stylesheets/home.css')
+extends nav 
+append head
+  link(rel='stylesheet' href='/stylesheets/home.css')
 block content
      section
         .section-heading
@@ -10,9 +11,9 @@ block content
         .grid-container
           .grid-x.grid-padding-x
             .cell
-              each topHit in topHits
+             each topHit in topHits
                 img(class="tophits" src=topHit.songImg) 
-                topHit.name 
+                a(class="songLink" href=`http://localhost:8080/songs/${topHit.id}`) `http://localhost:8080/song/${id}`
      section
        .section-heading
          .grid-container

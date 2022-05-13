@@ -1,19 +1,38 @@
-main.main
-  aside.sidebar
-    nav.nav
-      ul
-        li.active
-          a(href='#') Home
-        li
-          a(href='#') Liked
-        li
-          a(href='#') Interested
-        li
-          a(href='#') Make a Playlist
+doctype html
+html
+    head
+        script( type= 'text/javascript',src="./nav.js")
+        link(rel='stylesheet', href='/stylesheets/nav.css')
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        block head
+            meta(charset='utf-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+            title MixTape - #{title}
+            meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        block sidebar
+            main.main
+                aside.sidebar
+                    nav.nav
+                    .wrap
+                    ul
+                        li  
+                            a(href='/home') Home
+                        li
+                            a(href='/playlists/liked') Liked  
+                        li
+                            a(href='/playlists/interested') Interested
+                        li
+                            a(href='#') Make a Playlist 
+                        li
+                            a(href='#' onclick='randomSite();') Surprise Me
+                header.top-bar
+                .grid-container.full
+                    .grid-x.align-justify
+                        a.logo(href="/home") 
+                            span Logo goes here
+                    .search-box
+                        input.input-search(type='text' placeholder='Find music...')   
+                    .welcomemessage 
+                        span Welcome Back, "user.name"
 
-header.top-bar
-  .grid-container.full
-    .grid-x.align-justify
-       a.logo(href="#") 
-         i.fas.fa-weight-hanging 
-          span Logo goes here
+        block content
