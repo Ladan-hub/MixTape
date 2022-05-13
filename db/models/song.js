@@ -16,13 +16,16 @@ module.exports = (sequelize, DataTypes) => {
         through: 'RatingSongs',
         otherId: 'ratingId'
     })
-    Song.belongsToMany(models.Tape,
-      {
-        foreignKey: 'songId',
-        through: 'Playlists',
-        otherId: 'tapeId'
+    // Song.belongsToMany(models.Tape,
+    //   {
+    //     foreignKey: 'songId',
+    //     through: 'Playlists',
+    //     otherId: 'tapeId',
+    //     as: 'something'
+    // })
+    Song.hasMany(models.Playlist, {
+      foreignKey: 'songId'
     })
-    
   };
   return Song;
 };
