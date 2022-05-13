@@ -1,6 +1,7 @@
 .container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 100px 2fr 2fr;
+    height: 1800px;
 }
 
 .heading-section {
@@ -47,7 +48,7 @@
     font-weight: 400;
     height: 40px;
     padding: 0 1.6rem;
-    margin-left: 20px; 
+    margin-left: 40px;
     text-align: center;
     text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
     transition: all .5s;

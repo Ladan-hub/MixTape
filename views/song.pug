@@ -14,18 +14,6 @@ block content
                 div(class='song-detail')
                     div(class='song-info')
                         div(class='song-name') #{song.name}
-                        div(class='rating')
-                            div(class='rate')
-                                label(for='star5') 5 stars
-                                input(type='radio' name='rate' value='5' checked)
-                                label(for='star4') 4 stars
-                                input(type='radio' name='rate' value='4' checked)
-                                label(for='star3') 3 stars
-                                input(type='radio' name='rate' value='3' checked)
-                                label(for='star2') 2 stars
-                                input(type='radio' name='rate' value='2' checked)
-                                label(for='star1') 1 stars
-                                input(type='radio' name='rate' value='1' checked)
                         div(class='artistname') #{song.artistName}
                         div(class='albumname') Album: #{song.albumName}
                         div(class='releasedata') Release Date: #{song.releaseDate}
@@ -37,5 +25,5 @@ block content
                                 each tape in tapes
                                     option(value=`${tape.id}`)=tape.tapeName
                         button(class='add-btn' type='submit') Add to Playlist
-        div(class='play-btn')
+        div(class='video')
             iframe(width="1000" height="500" src=`${song.youtubeURL}` frameborder="0" allowfullscreen)
