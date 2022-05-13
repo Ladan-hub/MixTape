@@ -6,14 +6,14 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const db = require('../db/models');
 const { loginUser, logoutUser } = require('../auth');
 const bcrypt = require('bcryptjs');
-const { route, getMaxListeners } = require('../app');
+// const { route, getMaxListeners } = require('../app');
 
 /* GET users listing. */
 // router.get('/', function(req, res, next) {
 //   res.send('respond with a resource');
 // });
 
-router.get('/register', csrfProtection, (req,res) => {
+router.get('/register', csrfProtection, (req, res) => {
   const user = db.User.build();
   res.render('user-register', {
     title: 'Register',
@@ -79,6 +79,10 @@ router.post('/register', csrfProtection, userValidators,
       });
     }
   }));
+router.use((req, res, next) => {
+  console.log(req.path, 'something')
+  next()
+})
 
 router.get('/', csrfProtection, (req, res) => {
   res.render('user-login', {
@@ -135,7 +139,7 @@ router.post('/logout', (req, res) => {
 
 router.get('/guest', async (req, res) => {
   // res.redirect('/home');
-  const demoUser = await db.User.findOne( { where: { email: 'santaclara@gmail.com' }} )
+  const demoUser = await db.User.findOne({ where: { email: 'santaclara@gmail.com' } })
   loginUser(req, res, demoUser);
   return res.redirect('/register');
 })

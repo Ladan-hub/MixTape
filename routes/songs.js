@@ -13,34 +13,44 @@ const taskNotFoundError = (id) => {
     return err;
   };
 
-// router.get('/song', asyncHandler(async(req, res) => {
 
-//   res.render("song")
-// }))
 
 router.get('/songs/:id', asyncHandler(async(req, res) => {
+    // const user = req.session.auth
+    // console.log(user)
+
     const song = await db.Song.findOne({
         where: {
             id: req.params.id,
         },
     });
 
+    const tapes = await db.Tape.findAll({
+      where:{
+         userId: req.session.auth.userId
+      }
+    })
+
     if(song){
-        res.render("song", { id: req.params.id, song })
+        res.render("song", { id: req.params.id, song, tapes })
     }else{
-        next(taskNotFoundError(req.params.id));
+        // next(taskNotFoundError(req.params.id));
     }
   }));
 
 router.post('/songs/:id', asyncHandler(async(req, res) => {
-
+    console.log('fetched songId--------------------------------------------------')
     const songId = req.params.id;
+
+
+    const { tapeId } = req.body;
 
     // const tapeId = await Tape.findByPk(songId, {
     //     include: Playlist,
     // });
-    const new_playlist = await db.Playlist.create({ songId, tapeId: 1 })
-    console.log(new_playlist)
+    const new_playlist = await db.Playlist.create({ songId, tapeId })
+    res.redirect('/login')
+    // console.log(new_playlist)
   }));
 
   // get the userId through the session, query the playlist through user table

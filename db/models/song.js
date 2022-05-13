@@ -10,18 +10,19 @@ module.exports = (sequelize, DataTypes) => {
     youtubeURL: DataTypes.STRING
   }, {});
   Song.associate = function(models) {
-    Song.belongsToMany(models.Rating, 
+    Song.belongsToMany(models.Rating,
       {
         foreignKey: 'songId',
         through: 'RatingSongs',
         otherId: 'ratingId'
     })
-    Song.belongsToMany(models.Tape, 
+    Song.belongsToMany(models.Tape,
       {
         foreignKey: 'songId',
         through: 'Playlists',
         otherId: 'tapeId'
     })
+    
   };
   return Song;
 };
