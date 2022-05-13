@@ -379,3 +379,4 @@ module.exports = {
     return queryInterface.bulkDelete("Songs", null, {});
   },
 };
+

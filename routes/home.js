@@ -12,13 +12,13 @@ router.get("/home", async function (req, res, next) {
   // 1. query for the data -> the joint table which user has which songs?
 
   const topHits = await db.Song.findAll({
-    limit: 8,
+    limit: 9,
     order: [["listenCount", "DESC"]],
   });
   //console.log(topHits[0].songImg,"HERE");
 
   const recentReleases = await db.Song.findAll({
-    limit: 8,
+    limit: 9,
     order: [["releaseDate", "DESC"]],
   });
 
