@@ -11,7 +11,6 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const usersRouter = require('./routes/users');
 const songsRouter = require('./routes/songs');
 const homeRouter = require('./routes/home');
-const playlistRouter = require('./routes/playlist')
 const csrf = require('csurf');
 const { restoreUser } = require('./auth');
 
@@ -48,8 +47,6 @@ store.sync();
 app.use(restoreUser);
 app.use(usersRouter);
 app.use(songsRouter);
-app.use(playlistRouter);
-
 app.use(homeRouter);
 
 
