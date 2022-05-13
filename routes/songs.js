@@ -34,14 +34,13 @@ router.get('/songs/:id', asyncHandler(async(req, res) => {
     if(song){
         res.render("song", { id: req.params.id, song, tapes })
     }else{
-        // next(taskNotFoundError(req.params.id));
+        next(taskNotFoundError(req.params.id));
     }
   }));
 
 router.post('/songs/:id', asyncHandler(async(req, res) => {
     console.log('fetched songId--------------------------------------------------')
     const songId = req.params.id;
-
 
     const { tapeId } = req.body;
 

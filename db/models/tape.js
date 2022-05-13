@@ -9,11 +9,15 @@ module.exports = (sequelize, DataTypes) => {
       {
           foreignKey: 'userId',
       })
-    Tape.belongsToMany(models.Song,
-      {
-          foreignKey: 'tapeId',
-          through: 'Playlists',
-          otherId: 'songId'
+    // Tape.belongsToMany(models.Song,
+    //   {
+    //       foreignKey: 'tapeId',
+    //       through: 'Playlists',
+    //       otherId: 'songId',
+    //       as: 'something'
+    //   })
+    Tape.hasMany(models.Playlist, {
+        foreignKey: 'tapeId'
       })
   };
   return Tape;

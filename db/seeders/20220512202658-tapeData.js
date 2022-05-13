@@ -13,19 +13,19 @@ module.exports = {
       }], {});
     */
       return queryInterface.bulkInsert('Tapes', [{
-        tapeName: 'banana',
+        tapeName: 'Listened',
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        tapeName: 'apple',
+        tapeName: 'Interested',
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        tapeName: 'orange',
+        tapeName: 'Jogging',
         userId: 4,
         createdAt: new Date(),
         updatedAt: new Date()

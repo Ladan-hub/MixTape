@@ -138,11 +138,13 @@ router.get('/guest', async (req, res) => {
   const demoUser = await db.User.findOne({ where: { email: 'santaclara@gmail.com' } })
   loginUser(req, res, demoUser);
   return res.redirect('/register');
-})
+});
 
 router.get('/cancel', (req, res) => {
   res.redirect('/login');
-})
+});
+
+
 
 
 module.exports = router;
