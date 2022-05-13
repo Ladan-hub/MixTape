@@ -47,7 +47,6 @@ store.sync();
 app.use(restoreUser);
 app.use(usersRouter);
 app.use(songsRouter);
-
 app.use(homeRouter);
 
 
