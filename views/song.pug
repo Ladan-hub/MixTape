@@ -27,9 +27,9 @@ block content
                                 label(for='star1') 1 stars
                                 input(type='radio' name='rate' value='1' checked)
                         div(class='artistname') #{song.artistName}
-                        div Album: #{song.albumName}
-                        div Release Date: #{song.releaseDate}
-                        div Listen Count: #{song.listenCount}
+                        div(class='albumname') Album: #{song.albumName}
+                        div(class='releasedata') Release Date: #{song.releaseDate}
+                        div(class='listencount') Listen Count: #{song.listenCount}
                 div(class='playlist-btn')
                     form(action=`/songs/${song.id}` method='post' class='display-flex')
                         label(for='add')
