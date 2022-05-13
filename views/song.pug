@@ -8,7 +8,7 @@ block content
             h2 Find Music and Save Music
         div(class='row')
             div(class='col-md-6')
-                div(class='item')
+                div(class='songImage')
                     img(src=`${song.songImg}`)
             div(class='col-md-6')
                 div(class='song-detail')
@@ -26,17 +26,16 @@ block content
                                 input(type='radio' name='rate' value='2' checked)
                                 label(for='star1') 1 stars
                                 input(type='radio' name='rate' value='1' checked)
-                        div(class='artistname')
-                            p #{song.artistName}
-                p Album: #{song.albumName}
-                p Release Date: #{song.releaseDate}
-                p Listen Count: #{song.listenCount}
+                        div(class='artistname') #{song.artistName}
+                        div Album: #{song.albumName}
+                        div Release Date: #{song.releaseDate}
+                        div Listen Count: #{song.listenCount}
                 div(class='playlist-btn')
                     form(action=`/songs/${song.id}` method='post' class='display-flex')
-                        label(for='add') Add to Playlist
-                            select(name='tapeId')
+                        label(for='add')
+                            select(name='tapeId' class='playlist-select')
                                 each tape in tapes
                                     option(value=`${tape.id}`)=tape.tapeName
-                            button(type='submit') Add to Playlist
-                div(class='play-btn')
-                    iframe(width="1000" height="500" src=`${song.youtubeURL}` frameborder="0" allowfullscreen)
+                        button(class='add-btn' type='submit') Add to Playlist
+        div(class='play-btn')
+            iframe(width="1000" height="500" src=`${song.youtubeURL}` frameborder="0" allowfullscreen)
