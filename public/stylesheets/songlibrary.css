@@ -1,19 +1,7 @@
-.recentReleases{
+.allSongImages {
     height: 200px;
     width: 200px;
     margin: 15px;
-}
-
-
-.tophits {
-    height: 200px;
-    width: 200px;
-    margin: 15px;
-    transition: width 2s, height 2s, transform 2s;
-}
-
-.songLink {
-    color: aqua;
 }
 
 .overlay {
@@ -30,8 +18,6 @@
   .tophits:hover .overlay {
     opacity: 1;
   }
-
-
 
   section {
     position: relative;

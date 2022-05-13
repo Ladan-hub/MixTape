@@ -1,0 +1,17 @@
+extends nav 
+append head
+  link(rel='stylesheet' href='/stylesheets/songlibrary.css')
+
+block content
+     section
+        .section-heading
+          .grid-container
+            .grid-x
+              .cell
+                h2 Songs
+        .grid-container
+          .grid-x.grid-padding-x
+            .cell 
+                each song in allSongs
+                  a(class="allSongLinks" href=`songs/${song.id}`)
+                    img(class="allSongImages" src=song.songImg)

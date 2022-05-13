@@ -12,6 +12,8 @@ const usersRouter = require('./routes/users');
 const songsRouter = require('./routes/songs');
 const homeRouter = require('./routes/home');
 const tapesRouter = require('./routes/tape');
+const songlibraryRouter = require('./routes/songlibrary')
+
 const csrf = require('csurf');
 const { restoreUser } = require('./auth');
 
@@ -49,7 +51,7 @@ app.use(restoreUser);
 app.use(usersRouter);
 app.use(songsRouter);
 app.use(tapesRouter);
-
+app.use(songlibraryRouter);
 app.use(homeRouter);
 
 

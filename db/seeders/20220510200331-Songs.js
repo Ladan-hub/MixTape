@@ -156,7 +156,7 @@ module.exports = {
           releaseDate: "2001-01-17",
           artistName: "Enya",
           albumName: "The Lord of the Rings: The Fellowship of the Ring",
-          songImg: "https://i1.sndcdn.com/embed/artworks-000076978286-1064r8-t500x500.jpg",
+          songImg: "https://i.scdn.co/image/ab67616d0000b273ccbcabdad71c5f7eda5cb354",
           youtubeURL: "https://www.youtube.com/embed/NJVxEaGrHS4",
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -379,3 +379,4 @@ module.exports = {
     return queryInterface.bulkDelete("Songs", null, {});
   },
 };
+

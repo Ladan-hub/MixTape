@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+
+html {
+    font-family: 'Proxima Nova';
+    font-size: 16px;
+    background: black;
+}
+.sidebar {
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top:200px;
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    font-size: 0.65em;
+    z-index: 10;
+  }
+  
+  /* Style sidebar links */
+.sidebar a {
+    z-index: 11;
+    padding: 20px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+  }
+  
+  /* Style links on mouse-over */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Style the main content */
+  .main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+*, *:before, *:after {
+     box-sizing: border-box;
+     outline: none;
+}
+nav a {
+  display: inline-block;
+  outline: none;
+  text-decoration: none;
+  opacity: .7;
+  padding: 0 .5em;
+  color: black;
+  transition: opacity .2s ease-in-out;
+}
+nav a:hover,
+nav a:focus {
+  opacity: 1;
+}
+ body {
+     padding-top: 50px;
+}
+ h1, h2, h3, h4, h5, h6 {
+     font-family: 'Arial';
+     font-weight: 100%;
+     text-decoration: none;
+     letter-spacing: 0.1em;
+}
+ h2 {
+     margin: 16px 0;
+     color: white;
+}
+ p {
+     margin: 200px 0;
+}
+header {
+     position: fixed;
+     top: 0;
+     right: 0;
+     width: 80%;
+     height: 90px;
+     padding: 15px 0;
+     background-color: black;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+     z-index: 20;
+}
+ .logo {
+     position: relative;
+     display: block;
+     color: rgba(204, 103, 51, 1);
+     padding: 10px;
+     text-decoration: none;
+}
+.search-box{
+    position: fixed;
+    top: 4%;
+    right: 20%;
+    z-index: 30;
+  }
+  .input-search{
+    height: 40px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    z-index: 4;
+  }
+  .input-search::placeholder{
+    color:rgba(255,255,255,.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100; 
+  }
+  .input-search{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+  }
+  .input-search:focus{
+    color:rgba(255, 255, 255, 0.65);
+    width: 600px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  .input-search:focus ~ .btn-search {
+    opacity: 0%;
+  }
+  .welcomemessage{
+    color:rgba(255, 255, 255, 0.65);
+    position: fixed;
+    top: 5%;
+    right: 2%;
+    z-index: 30;
+    font-size: 19px;
+    letter-spacing: 1px;
+    font-weight: 100;
+  }
