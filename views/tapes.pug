@@ -6,7 +6,7 @@ block content
     div(class='container')
         div(class='tapes')
             h1(style='text-align: center') YOUR PLAYLISTS
-            form(action=`/tapes` method='post' class='newtapes')
+            form(action=`/tapes/create` method='post' class='newtapes')
                 input(type='hidden' name='_csrf' value=csrfToken)
                 input(type='hidden' name='tapeId' value=tapeName)
                 div(class='create-cancel-btn')
