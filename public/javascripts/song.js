@@ -11,19 +11,27 @@ for(let i = 0; i < playlists.length; i++){
 
         button.addEventListener('click', async (e) => {
             e.preventDefault();
-            try {
-                const res = await fetch(`/songs/${e.target.id}`,{
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                });
+            // const string = e.target.id.split('-')
+            // const tapeId = string[0]
+            // const songId = string[1]
+            // console.log(tapeId, songId)
 
-                if(!res.ok){
-                    throw res;
-                }
-            } catch(e) {
-                // custom error handler?
-                console.log(e)
-            }
+            // try {
+            //     const res = await fetch(`/songs/${songId}`,{
+            //         method: 'POST',
+            //         headers: { 'Content-Type': 'application/json' },
+            //         body: {
+            //             tapeId
+            //         }
+            //     });
+
+            //     if(!res.ok){
+            //         throw res;
+            //     }
+            // } catch(e) {
+            //     // custom error handler?
+            //     console.log(e)
+            // }
 
         })
 

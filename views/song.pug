@@ -32,11 +32,11 @@ block content
                 p Release Date: #{song.releaseDate}
                 p Listen Count: #{song.listenCount}
                 div(class='playlist-btn')
-                    form(action="#" class='display-flex')
+                    form(action=`/songs/${song.id}` method='post' class='display-flex')
                         label(for='add') Add to Playlist
-                        select(name='playlist-button')
-                            each tape in tapes
-                                option(id=`${tape.id}-${song.id}`)=tape.tapeName
-                        button(type='submit' class='playlist') Add to Playlist
+                            select(name='tapeId')
+                                each tape in tapes
+                                    option(value=`${tape.id}`)=tape.tapeName
+                            button(type='submit') Add to Playlist
                 div(class='play-btn')
                     iframe(width="1000" height="500" src=`${song.youtubeURL}` frameborder="0" allowfullscreen)
