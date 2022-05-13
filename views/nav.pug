@@ -15,16 +15,12 @@ html
                     nav.nav
                     .wrap
                     ul
+                        li
+                          a(href='/home') Home
                         li  
-                            a(href='/home') Home
+                          a(href='/songs') Songs 
                         li
-                            a(href='/playlists/liked') Liked  
-                        li
-                            a(href='/playlists/interested') Interested
-                        li
-                            a(href='#') Make a Playlist 
-                        li
-                            a(href='#' onclick='randomSite();') Surprise Me
+                          a(href=`/users/${user.id}/tapes`) My Tapes
                 header.top-bar
                 .grid-container.full
                     .grid-x.align-justify
