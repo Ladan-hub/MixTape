@@ -10,10 +10,11 @@ block content
                 h2 Top Hits this Week
         .grid-container
           .grid-x.grid-padding-x
-            .cell
-             each topHit in topHits
-                img(class="tophits" src=topHit.songImg) 
-                a(class="songLink" href=`http://localhost:8080/songs/${topHit.id}`) `http://localhost:8080/song/${id}`
+            .cell 
+                each topHit in topHits
+                  a(class="songLink" href=`songs/${topHit.id}`)
+                    img(class="tophits" src=topHit.songImg) 
+                
      section
        .section-heading
          .grid-container
@@ -24,7 +25,8 @@ block content
          .grid-x.grid-padding-x
            .cell
              each recentRelease in recentReleases
-               img(class="recentReleases" src=recentRelease.songImg)
+               a(class="songLink" href=`songs/${recentRelease.id}`)
+                 img(class="recentReleases" src=recentRelease.songImg)
      section
        .section-heading
          .grid-container 
