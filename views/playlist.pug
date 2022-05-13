@@ -13,11 +13,11 @@ block content
                             th(scope='col') Song
                             th(scope='col') Artist
                             th(scope='col') Click here!
-            tbody
-                each song in playlist 
-                    tr
-                        td= song.name
-                        td= song.artistName
-                        td= song.youtubeURL
+                    tbody
+                        each song in playlist 
+                            tr
+                                td= song.name
+                                td= song.artistName
+                                td= song.youtubeURL
             else
                 p: em There are no songs here.
