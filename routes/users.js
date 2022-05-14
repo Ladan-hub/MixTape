@@ -140,9 +140,9 @@ router.post('/logout', (req, res) => {
 
 router.get('/guest', async (req, res) => {
   // res.redirect('/home');
-  const demoUser = await db.User.findOne({ where: { email: 'santaclara@gmail.com' } })
+  const demoUser = await db.User.findOne({ where: { email: 'demouser@gmail.com' } })
   loginUser(req, res, demoUser);
-  return res.redirect('/register');
+  return res.redirect('/home');
 });
 
 router.get('/cancel', (req, res) => {
