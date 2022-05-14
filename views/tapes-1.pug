@@ -9,7 +9,7 @@ block content
                 input(type='text' name='tapeName' value=tapeName)
                 div(class='create-cancel-btn')
                     button(type='submit' class='create-btn') Create
-                    a(href='/tapes' class='cancel-btn') Cancel
+                    a(href=`/users/${user.id}/tapes` class='cancel-btn') Cancel
         div
             each tape in tapes
                 a(href=`/users/${userId}/tapes/${tape.id}`)=tape.tapeName
