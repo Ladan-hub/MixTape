@@ -15,7 +15,7 @@ html
       if locals.authenticated
         div(class='nav-btn')
           a(href='/home' class='home') HOME
-          a(href='/users/:id/playlist' class='playlist') PLAYLIST
+          a(href=`/users/${user.id}/tapes` class='playlist') PLAYLIST
         div(class='info-btn')
           span(class='login-status') Welcome #{user.username}!
           form(class='logout-form' action='/logout' method='post')
