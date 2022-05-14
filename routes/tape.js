@@ -58,6 +58,16 @@ router.post('/users/:id/tapes', asyncHandler(async (req, res) => {
     const new_tape = await db.Tape.create({ tapeName, userId })
     res.redirect(`/users/${userId}/tapes`)
 }))
+
+//delete tape
+router.delete('/users/:userId/tapes/:tapeId', asyncHandler(async(req,res) => {
+    const tapeId = req.params.tapeId
+    await db.Tape.destroy({
+        where: tapeId
+    });
+
+}))
+
 //update a tape name
 router.post('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
     const userId = req.params.userId;
@@ -77,4 +87,6 @@ router.post('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
         res.send('Error')
     }
 }));
+
 module.exports = router;
+

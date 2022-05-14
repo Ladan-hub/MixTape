@@ -13,6 +13,11 @@ const bcrypt = require('bcryptjs');
 //   res.send('respond with a resource');
 // });
 
+
+// router.get('users/:id/tapes', csrfProtection, (req,res) => {
+//   const userId = db.user.findOne();
+// } )
+
 router.get('/register', csrfProtection, (req, res) => {
   const user = db.User.build();
   res.render('user-register', {

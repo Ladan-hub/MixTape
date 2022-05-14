@@ -12,7 +12,9 @@ const usersRouter = require('./routes/users');
 const songsRouter = require('./routes/songs');
 const homeRouter = require('./routes/home');
 const tapesRouter = require('./routes/tape');
-const songlibraryRouter = require('./routes/songlibrary')
+//const myTapesRouter = require('./routes/mytapes');
+const songlibraryRouter = require('./routes/songlibrary');
+
 
 const csrf = require('csurf');
 const { restoreUser } = require('./auth');
@@ -52,7 +54,11 @@ app.use(usersRouter);
 app.use(songsRouter);
 app.use(tapesRouter);
 app.use(songlibraryRouter);
+//app.use(myTapesRouter);
 app.use(homeRouter);
+
+
+
 
 
 // catch 404 and forward to error handler
