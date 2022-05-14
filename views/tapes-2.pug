@@ -1,7 +1,7 @@
 extends layout.pug
 include utils.pug
 block content
-    div(class='container')
+    div(class='tapes2')
         section(class='update')
         h1(style='text-align: center') Saved songs in your #{tape.tapeName}
         form(class='newtapes')
@@ -22,6 +22,6 @@ block content
                             a(class="allSongLinks" href=`/songs/${playlist.Song.id}`)
                                 img(class="allSongImages" src=playlist.Song.songImg)
                                 p #{playlist.Song.name}
-    script(src='/javascripts/tape.js')
+    //- script(src='/javascripts/tape.js')
                            
 
