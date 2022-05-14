@@ -15,20 +15,23 @@ html
                     nav.nav
                     .wrap
                     ul
-                        li
-                          a(href='/home') Home
                         li  
-                          a(href='/songs') Songs 
+                            a(href='/home') Home
+                        li  
+                            a(href='/songs') Songs 
                         li
-                          a(href=`/users/${user.id}/tapes`) My Tapes
+                            a(href=`/users/${userId}/tapes`) My Tapes
+
                 header.top-bar
                 .grid-container.full
                     .grid-x.align-justify
                         a.logo(href="/home") 
                             span Logo goes here
                     .search-box
-                        input.input-search(type='text' placeholder='Find music...')   
+                        input.input-search(type='text' placeholder='Find music...')
+                        button(class="submitButton" type="submit") Submit 
                     .welcomemessage 
                         span Welcome Back, "user.name"
 
         block content
+

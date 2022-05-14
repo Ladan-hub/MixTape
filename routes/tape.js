@@ -74,4 +74,13 @@ router.post('/users/:id/tapes', asyncHandler(async (req, res) => {
 
 }))
 
+
+router.delete('/users/:userId/tapes/:tapeId', asyncHandler(async(req,res) => {
+    const tapeId = req.params.tapeId
+    await db.Tape.destroy({
+        where: tapeId
+    });
+
+}))
+
 module.exports = router;
