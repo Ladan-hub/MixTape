@@ -68,7 +68,7 @@ router.post('/register', csrfProtection, userValidators,
       const hashedPassword = await bcrypt.hash(password, 10);
       user.hashedpassword = hashedPassword;
       await user.save();
-      res.redirect('/home');
+      res.redirect('/login');
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
       res.render('user-register', {
@@ -80,7 +80,7 @@ router.post('/register', csrfProtection, userValidators,
     }
   }));
 
-router.get('/', csrfProtection, (req, res) => {
+router.get('/login', csrfProtection, (req, res) => {
   res.render('user-login', {
     title: 'Login',
     csrfToken: req.csrfToken(),
@@ -97,7 +97,7 @@ const loginValidators = [
 ];
 
 
-router.post('/', csrfProtection, loginValidators,
+router.post('/login', csrfProtection, loginValidators,
   asyncHandler(async (req, res) => {
     const {
       emailAddress,
@@ -130,19 +130,18 @@ router.post('/', csrfProtection, loginValidators,
 
 router.post('/logout', (req, res) => {
   logoutUser(req, res);
-  res.redirect('/');
+  res.redirect('/login');
 });
 
 router.get('/guest', async (req, res) => {
   // res.redirect('/home');
-  const demoUser = await db.User.findOne({ where: { email: 'demouser@gmail.com' } })
+  const demoUser = await db.User.findOne({ where: { email: 'santaclara@gmail.com' } })
   loginUser(req, res, demoUser);
-  return res.redirect('/home');
+  return res.redirect('/register');
 });
 
-
 router.get('/cancel', (req, res) => {
-  res.redirect('/');
+  res.redirect('/login');
 });
 
 
