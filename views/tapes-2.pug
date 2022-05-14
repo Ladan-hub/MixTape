@@ -4,7 +4,7 @@ block content
     div(class='tapes2')
         section(class='update')
         h1(style='text-align: center') Saved songs in your #{tape.tapeName}
-        form(class='newtapes')
+        form(class='newtapes' action=`/users/${user.id}/tapes/${tape.id}` method='post')
             input(type='hidden' name='_csrf' value=csrfToken)
             input(type='text' name='tapeName' value=tapeName id='tapeName')
             div(class='create-cancel-btn')
