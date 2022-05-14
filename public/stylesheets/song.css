@@ -1,6 +1,7 @@
 .container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 50px 750px 1000px;
+    height: 1800px;
 }
 
 .heading-section {
