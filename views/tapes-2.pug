@@ -4,6 +4,7 @@ block content
     div(class='container')
         div(class='tapes')
             h1(style='text-align: center') Saved songs in your #{tape.tapeName}
+            //- button(type='submit' class='update-btn') Update
             table
                 thead
                     tr
@@ -12,3 +13,11 @@ block content
                     each playlist in playlists
                         tr
                             td= playlist.Song.name
+        form(class='newtapes')
+            input(type='hidden' name='_csrf' value=csrfToken)
+            input(type='text' name='tapeName' value=tapeName id='tapeName')
+            div(class='create-cancel-btn')
+                button(type='submit' class='create-btn') Update your tape name here!
+    script(src='/javascripts/tape.js')
+                           
+
