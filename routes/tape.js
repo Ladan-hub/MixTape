@@ -24,7 +24,6 @@ const taskNotFoundError = (id) => {
 router.get('/users/:id/tapes', asyncHandler(async (req, res) => {
 
     const userId = req.params.id;
-
     const tapes = await db.Tape.findAll({
         where: {
             userId
@@ -40,7 +39,7 @@ router.get('/users/:id/tapes', asyncHandler(async (req, res) => {
 }));
 
 // read all songs in a single tape
-router.get('/users/:userId/tapes/:tapeId', csrfProtection, asyncHandler(async (req, res) => {
+router.get('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
 
     const userId = req.params.userId;
     const tapeId = req.params.tapeId;
@@ -63,7 +62,7 @@ router.get('/users/:userId/tapes/:tapeId', csrfProtection, asyncHandler(async (r
     });
 
     if (playlists) {
-        res.render('tapes-2', { playlists, tape, userId, csrfToken: req.csrfToken()})
+        res.render('tapes-2', { playlists, tape })
     } else {
         next(taskNotFoundError(req.params.id));
     }
@@ -72,8 +71,8 @@ router.get('/users/:userId/tapes/:tapeId', csrfProtection, asyncHandler(async (r
 }))
 
 // create a new tape, add a new tape button
-router.post('/users/:id/tapes', csrfProtection, asyncHandler(async (req, res) => {
-
+router.post('/users/:id/tapes', asyncHandler(async (req, res) => {
+    // router.post('/users/:id/tapes', csrfProtection, asyncHandler(async (req, res) => {
     const userId = req.params.id;
 
     const { tapeName } = req.body
@@ -84,28 +83,22 @@ router.post('/users/:id/tapes', csrfProtection, asyncHandler(async (req, res) =>
 }))
 
 //update a tape name
-router.put('/users/tapes/update', asyncHandler(async (req, res) => {
-    // const userId = req.params.userId;
-    // const tapeId = req.params.tapeId;
-    // const url = req.headers.referer.split('/');
-
-    // console.log(url)
-    // const { tapeName } = req.body;
-    const {userId, tapeId, tapeName} = req.body
-    console.log(tapeId, tapeName, '===================================================')
-
+router.post('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
+    const userId = req.params.userId;
+    const tapeId = req.params.tapeId;
+    console.log("req.body", req.body)
+    const { tapeName } = req.body;
+    console.log("tapeName:", tapeName)
     const new_tapeName = tapeName;
-
-    // console.log(userId)
-
+    console.log('======================')
+    console.log(userId)
     if (new_tapeName) {
         const tapeToUpdate = await db.Tape.findByPk(Number(tapeId))
-        // await tapeToUpdate.update(new_tapeName)
         tapeToUpdate.tapeName = new_tapeName
         await tapeToUpdate.save()
-        return res.render('/login')
-    }else{
-       res.send('Error')
+        res.redirect(`/users/${userId}/tapes/${tapeId}`)
+    } else {
+        res.send('Error')
     }
 }));
 

@@ -25,8 +25,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                     method: 'PUT',
                     body: JSON.stringify(body),
                     headers: { 'Content-Type': 'application/json' }
-                }).then(res => res)
-            return window.location.href = '/login';
+                })
+                // .then(res => res)
+            return res.redirect(`/users/${userId}/tapes/${tapeId}`);
             } catch (e) {
                 // custom error handler?
                 console.log(e)

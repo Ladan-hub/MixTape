@@ -48,7 +48,7 @@ router.post('/songs/:id', asyncHandler(async(req, res) => {
     //     include: Playlist,
     // });
     const new_playlist = await db.Playlist.create({ songId, tapeId })
-    res.redirect('/songs/:id')
+    res.redirect(`/songs/${songId}`)
     // console.log(new_playlist)
   }));
 

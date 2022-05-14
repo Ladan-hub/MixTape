@@ -1,5 +1,5 @@
 .register-button {
-background-color: beige;
+/* background-color: beige; */
 }
 
 .container {
@@ -8,12 +8,12 @@ background-color: beige;
     padding: 30px;
 }
 body {
-    background-color: beige;
+    /* background-color: beige; */
 }
 
 form {
     display: border-box;
-    background-color: beige;
+    /* background-color: beige; */
     /* border-style: dashed; */
     align-items: center;
     text-align: center;
@@ -54,5 +54,5 @@ a {
 
 .alert{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: beige;
+    /* background-color: beige; */
 }

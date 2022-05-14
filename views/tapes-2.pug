@@ -2,22 +2,26 @@ extends layout.pug
 include utils.pug
 block content
     div(class='container')
-        div(class='tapes')
-            h1(style='text-align: center') Saved songs in your #{tape.tapeName}
-            //- button(type='submit' class='update-btn') Update
-            table
-                thead
-                    tr
-                        th(scope='col') Song
-                tbody
-                    each playlist in playlists
-                        tr
-                            td= playlist.Song.name
+        section(class='update')
+        h1(style='text-align: center') Saved songs in your #{tape.tapeName}
         form(class='newtapes')
             input(type='hidden' name='_csrf' value=csrfToken)
             input(type='text' name='tapeName' value=tapeName id='tapeName')
             div(class='create-cancel-btn')
                 button(type='submit' class='create-btn') Update your tape name here!
+        section
+            .section-heading
+                .grid-container
+                    .grid-x
+                        .cell
+                            h2 Check your songs 
+            .grid-container
+                .grid-x.grid-padding-x
+                    .cell 
+                        each playlist in playlists 
+                            a(class="allSongLinks" href=`/songs/${playlist.Song.id}`)
+                                img(class="allSongImages" src=playlist.Song.songImg)
+                                p #{playlist.Song.name}
     script(src='/javascripts/tape.js')
                            
 

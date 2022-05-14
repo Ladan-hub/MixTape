@@ -6,16 +6,19 @@ html
     link(rel='stylesheet' href='/stylesheets/layout-nav.css')
     link(rel='stylesheet' href='/stylesheets/register.css')
     link(rel='stylesheet' href='/stylesheets/song.css')
-    //- script(src='/javascripts/song.js' type='module')
+    link(rel='stylesheet' href='/stylesheets/tapesdisplay.css')
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet")
     title MixTape - #{title}
   body
     nav(class='navigation-bar')
-      img(src='/images/mixtapelogo.jpeg' alt='Mixtape-logo')
+      h1(style="font-family: 'Dancing Script', cursive") MIXTAPE
       div(class='home-playlist-bar')
       if locals.authenticated
         div(class='nav-btn')
           a(href='/home' class='home') HOME
-          a(href='/users/:id/playlist' class='playlist') PLAYLIST
+          a(href=`/users/${user.id}/tapes` class='playlist') PLAYLIST
         div(class='info-btn')
           span(class='login-status') Welcome #{user.username}!
           form(class='logout-form' action='/logout' method='post')
@@ -27,4 +30,3 @@ html
     div(class='container')
       h2(class='information') #{title}
       block content
-    script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous') script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous') script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6' crossorigin='anonymous')

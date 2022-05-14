@@ -1,5 +1,9 @@
+h1 {
+    color: white;
+}
+
 .navigation-bar {
-    background: beige;
+    /* background: beige; */
     display: flex;
     justify-content: space-between;
     height: 100px;
@@ -79,6 +83,6 @@
     background-color: azure;
     text-align: center;
     justify-content: center;
-    font-family: ‘Dekko’;
+    font-family: 'Dekko';
     font-size: 20px;
 }
