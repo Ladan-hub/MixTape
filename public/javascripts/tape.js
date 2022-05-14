@@ -1,9 +1,42 @@
 // button to add a tape
+document.addEventListener('DOMContentLoaded', async () => {
+    const button = document.querySelector(".update-btn");
+    const confirm_btn = document.createElement('button')
+    confirm_btn.innerText = 'confirm'
+    let tapeName = document.querySelector('#tapeName')
+    const newtapes = document.querySelector('.newtapes')
+    const submit_btn = document.querySelector('.create-btn')
 
-const button = document.querySelector(".add-to-tape");
+    submit_btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        newtapes.append(confirm_btn)
 
-button.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  
+        const url = window.location.href
 
-});
+        const userId = url.split('/')[4];
+        const tapeId = url.split('/')[6]
+        tapeName = tapeName.value
+        const body = {userId, tapeId, tapeName}
+        confirm_btn.addEventListener('click', async () => {
+            e.preventDefault();
+            e.stopPropagation();
+            try {
+                await fetch(`/users/tapes/update`, {
+                    method: 'PUT',
+                    body: JSON.stringify(body),
+                    headers: { 'Content-Type': 'application/json' }
+                }).then(res => res)
+            return window.location.href = '/login';
+            } catch (e) {
+                // custom error handler?
+                console.log(e)
+            }
+        })
+
+    })
+
+
+
+
+
+})
