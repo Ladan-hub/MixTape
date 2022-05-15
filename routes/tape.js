@@ -47,6 +47,7 @@ router.get('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
             },
         }]
     });
+    
     if (playlists) {
         res.render('tapes-2', { playlists, tape })
     } else {

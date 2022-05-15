@@ -14,14 +14,8 @@ module.exports = {
     */
     return queryInterface.bulkInsert('Playlists', [
       {
-        songId: 1,
-        tapeId: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
         songId: 30,
-        tapeId: 1,
+        tapeId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -117,7 +111,7 @@ module.exports = {
       },
       {
         songId: 17,
-        tapeId: 1,
+        tapeId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },

@@ -15,7 +15,6 @@ router.get("/home", async function (req, res, next) {
     limit: 9,
     order: [["listenCount", "DESC"]],
   });
-  //console.log(topHits[0].songImg,"HERE");
 
   const recentReleases = await db.Song.findAll({
     limit: 9,

@@ -6,17 +6,6 @@ const { csrfProtection, asyncHandler } = require('./utils');
 const db = require('../db/models');
 const { loginUser, logoutUser } = require('../auth');
 const bcrypt = require('bcryptjs');
-// const { route, getMaxListeners } = require('../app');
-
-/* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
-
-
-// router.get('users/:id/tapes', csrfProtection, (req,res) => {
-//   const userId = db.user.findOne();
-// } )
 
 router.get('/register', csrfProtection, (req, res) => {
   const user = db.User.build();
@@ -60,7 +49,6 @@ router.post('/register', csrfProtection, userValidators,
       password
     } = req.body;
 
-
     const user = db.User.build({
       username,
       email: emailAddress,
@@ -84,6 +72,7 @@ router.post('/register', csrfProtection, userValidators,
       });
     }
   }));
+
 
 router.get('/login', csrfProtection, (req, res) => {
   res.render('user-login', {
@@ -148,7 +137,6 @@ router.get('/guest', async (req, res) => {
 router.get('/cancel', (req, res) => {
   res.redirect('/login');
 });
-
 
 
 
