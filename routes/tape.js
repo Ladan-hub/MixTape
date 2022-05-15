@@ -4,6 +4,7 @@ const { check, validationResult } = require('express-validator');
 const { requireAuth } = require('../auth');
 const { csrfProtection, asyncHandler } = require('./utils');
 const db = require('../db/models');
+
 const taskNotFoundError = (id) => {
     const err = Error("Song not found");
     err.errors = [`Song with id of ${id} could not be found.`];
@@ -11,6 +12,7 @@ const taskNotFoundError = (id) => {
     err.status = 404;
     return err;
 };
+
 // read a list of tapes
 router.get('/users/:id/tapes', asyncHandler(async (req, res) => {
     const userId = req.params.id;
@@ -25,12 +27,12 @@ router.get('/users/:id/tapes', asyncHandler(async (req, res) => {
         next(taskNotFoundError(req.params.id));
     }
 }));
+
 // read all songs in a single tape
 router.get('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
     const userId = req.params.userId;
     const tapeId = req.params.tapeId;
-    console.log('======================')
-    console.log(userId)
+
     const tape = await db.Tape.findOne({
         where: {
             id: tapeId
@@ -51,12 +53,18 @@ router.get('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
         next(taskNotFoundError(req.params.id));
     }
 }))
+
 // create a new tape, add a new tape button
 router.post('/users/:id/tapes', asyncHandler(async (req, res) => {
     const userId = req.params.id;
-    const { tapeName } = req.body
-    const new_tape = await db.Tape.create({ tapeName, userId })
-    res.redirect(`/users/${userId}/tapes`)
+   
+    if(parseInt(req.params.id, 10) !== 1) {
+        const { tapeName } = req.body
+        const new_tape = await db.Tape.create({ tapeName, userId })
+        res.redirect(`/users/${userId}/tapes`);
+    } else {
+        res.redirect('/login');
+    }
 }))
 
 //delete tape
@@ -65,19 +73,17 @@ router.delete('/users/:userId/tapes/:tapeId', asyncHandler(async(req,res) => {
     await db.Tape.destroy({
         where: tapeId
     });
-
 }))
 
 //update a tape name
 router.post('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
     const userId = req.params.userId;
     const tapeId = req.params.tapeId;
-    console.log("req.body", req.body)
+
     const { tapeName } = req.body;
-    console.log("tapeName:", tapeName)
+
     const new_tapeName = tapeName;
-    console.log('======================')
-    console.log(userId)
+
     if (new_tapeName) {
         const tapeToUpdate = await db.Tape.findByPk(Number(tapeId))
         tapeToUpdate.tapeName = new_tapeName

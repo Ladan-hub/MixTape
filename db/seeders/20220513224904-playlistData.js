@@ -20,6 +20,12 @@ module.exports = {
         updatedAt: new Date()
       },
       {
+        songId: 30,
+        tapeId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
         songId: 2,
         tapeId: 2,
         createdAt: new Date(),

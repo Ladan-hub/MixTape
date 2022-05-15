@@ -15,13 +15,13 @@ module.exports = {
       return queryInterface.bulkInsert('Tapes', [
       {
         tapeName: 'listened',
-        userId: 1,
+        userId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         tapeName: 'Interested',
-        userId: 1,
+        userId: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
