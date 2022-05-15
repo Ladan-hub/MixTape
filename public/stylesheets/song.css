@@ -1,26 +1,39 @@
 .container {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    /* flex-direction: column; */
 }
 
 .heading-section {
     text-align: center;
-    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 28px;
 }
 
 .row {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: block;
+    /* grid-template-columns: 50% 50%; */
 }
 
 .songImage {
-    height: 300px;
-    width: 300px;
+    display: block;
+    margin: 40px;
+    /* height: 300px;
+    width: 300px; */
+}
+
+.songImageDisplay{
+    height: 400px;
+    width: 400px;
+}
+
+
+.song-detail {
+    display: blcok;
 }
 
 .song-info {
-    display: flex;
-    flex-direction: column;
+    display: block;
     justify-content: space-between;
     align-items: flex-start;
     font-weight: 500;
@@ -28,12 +41,12 @@
 }
 
 .playlist-btn {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    /* flex-direction: column; */
     justify-content: space-evenly;
     align-items: flex-start;
+    padding-top: 30px;
 }
-
 
 .add-btn {
     background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
@@ -47,7 +60,7 @@
     font-weight: 400;
     height: 40px;
     padding: 0 1.6rem;
-    margin-left: 20px; 
+    margin-left: 20px;
     text-align: center;
     text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
     transition: all .5s;
@@ -69,8 +82,30 @@
     height: 40px;
 }
 
-
 .song-name {
     font-weight: 600;
     font-size: 50px;
+}
+
+.play-btn {
+    padding-top: 40px;
+    height: 1000px;
+}
+
+.song-name {
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 50px;
+}
+
+
+.song-info {
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+.artistname {
+    font-weight: 600;
+    font-size: 24px;
+    text-decoration: dotted;
 }

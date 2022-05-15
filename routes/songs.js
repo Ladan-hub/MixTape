@@ -34,15 +34,20 @@ router.get('/songs/:id', asyncHandler(async (req, res) => {
 
 router.post('/songs/:id', asyncHandler(async (req, res) => {
   const songId = req.params.id;
+  const user = req.session.auth.userId;
   const demouserId = parseInt(req.session.auth.userId, 10);
+
   if(demouserId !== 1){
     const { tapeId } = req.body;
-    const new_playlist = await db.Playlist.create({ songId, tapeId })
+    if(tapeId){
+      const new_playlist = await db.Playlist.create({ songId, tapeId });
     res.redirect(`/songs/${songId}`)
   } else {
+      res.redirect(`/users/${user}/tapes`)
+  }
+} else {
     res.redirect('/');
   }
-  
 }));
 
 

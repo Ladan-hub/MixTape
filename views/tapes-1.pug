@@ -2,14 +2,14 @@ extends layout.pug
 include utils.pug
 block content
     div(class='container')
+        h1(class='tapeTitle' style='text-align: center') YOUR TAPE
         div(class='tapes')
-            h1(style='text-align: center') YOUR TAPE
             form(action=`/users/${userId}/tapes` method='post' class='newtapes')
                 input(type='hidden' name='_csrf' value=csrfToken)
                 input(type='text' name='tapeName' value=tapeName)
                 div(class='create-cancel-btn')
                     button(type='submit' class='create-btn') Create
                     a(href=`/users/${userId}/tapes` class='cancel-btn') Cancel
-        div
+        div(class='tapeListBtn')
             each tape in tapes
-                a(href=`/users/${userId}/tapes/${tape.id}`)=tape.tapeName
+                a(class='button-30' href=`/users/${userId}/tapes/${tape.id}`)=tape.tapeName

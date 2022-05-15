@@ -12,6 +12,7 @@ const usersRouter = require('./routes/users');
 const songsRouter = require('./routes/songs');
 const homeRouter = require('./routes/home');
 const tapesRouter = require('./routes/tape');
+const aboutRouter = require('./routes/about');
 //const myTapesRouter = require('./routes/mytapes');
 const songlibraryRouter = require('./routes/songlibrary');
 
@@ -56,6 +57,7 @@ app.use(tapesRouter);
 app.use(songlibraryRouter);
 //app.use(myTapesRouter);
 app.use(homeRouter);
+app.use(aboutRouter);
 
 
 

@@ -7,10 +7,10 @@ block content
         div(class='heading-section')
             h2 Find Music and Save Music
         div(class='row')
-            div(class='col-md-6')
+            div
                 div(class='songImage')
-                    img(src=`${song.songImg}`)
-            div(class='col-md-6')
+                    img(class='songImageDisplay' src=`${song.songImg}`)
+            div
                 div(class='song-detail')
                     div(class='song-info')
                         div(class='song-name') #{song.name}
@@ -25,5 +25,5 @@ block content
                                 each tape in tapes
                                     option(value=`${tape.id}`)=tape.tapeName
                         button(class='add-btn' type='submit') Add to Playlist
-        div(class='play-btn')
-            iframe(width="1000" height="500" src=`${song.youtubeURL}` frameborder="0" allowfullscreen)
+    div(class='play-btn')
+        iframe(width="1000" height="500" src=`${song.youtubeURL}` frameborder="0" allowfullscreen)
