@@ -47,7 +47,7 @@ router.get('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
             },
         }]
     });
-    
+
     if (playlists) {
         res.render('tapes-2', { playlists, tape })
     } else {
@@ -64,7 +64,7 @@ router.post('/users/:id/tapes', asyncHandler(async (req, res) => {
         const new_tape = await db.Tape.create({ tapeName, userId })
         res.redirect(`/users/${userId}/tapes`);
     } else {
-        res.redirect('/login');
+        res.redirect('/');
     }
 }))
 

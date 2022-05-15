@@ -24,7 +24,7 @@ router.get('/songs/:id', asyncHandler(async (req, res) => {
       userId: req.session.auth.userId
     }
   });
-  
+
   if (song) {
     res.render("song", { id: req.params.id, song, tapes })
   } else {
@@ -40,7 +40,7 @@ router.post('/songs/:id', asyncHandler(async (req, res) => {
     const new_playlist = await db.Playlist.create({ songId, tapeId })
     res.redirect(`/songs/${songId}`)
   } else {
-    res.redirect('/login');
+    res.redirect('/');
   }
   
 }));
