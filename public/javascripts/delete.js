@@ -20,7 +20,6 @@ for (let i = 0; i < answerDeleteBtns.length; i++) {
         const data = await res.json();
       
         if (data.message === 'Success') {
-            console.log(data.message);
             const answerCard = document.querySelector(`#${answerId}`)
             answerCard.remove()
         } 

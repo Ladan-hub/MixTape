@@ -16,7 +16,6 @@ const taskNotFoundError = (input) => {
 
 router.post('/search', asyncHandler(async(req,res,next)=> {
     const {searchInput} = req.body;
-    console.log(req.body);
 
     const songs = await db.Song.findAll({
         where: {

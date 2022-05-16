@@ -91,7 +91,6 @@ router.post('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
 //delete tape name
 router.get('/users/:userId/tapes/:tapeId(\\d+)/delete', asyncHandler(async(req, res) => {
     const userId = parseInt(req.params.userId, 10);
-    // const tape = await db.Tape.findByPk(req.params.tapeId);
     const tapeId = parseInt(req.params.tapeId, 10);
     res.render('delete', {userId, tapeId})
 }))
@@ -99,7 +98,6 @@ router.get('/users/:userId/tapes/:tapeId(\\d+)/delete', asyncHandler(async(req, 
 router.post('/users/:userId/tapes/:tapeId(\\d+)/delete', asyncHandler(async (req, res) => {
     const userId = parseInt(req.params.userId, 10);
     const tapeId = req.params.tapeId;
-    console.log(tapeId)
     const tape = await db.Tape.findByPk(tapeId);
 
     await db.Playlist.destroy({
