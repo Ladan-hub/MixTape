@@ -1,0 +1,19 @@
+extends nav 
+append head
+  link(rel='stylesheet' href='/stylesheets/tapes-2.css')
+block content
+    section
+    div(class='container')
+        h1(class='tapeTitle' style='text-align: center') YOUR TAPE
+        div(class='tapes')
+            form(action=`/users/${userId}/tapes` method='post' class='newtapes')
+                input(type='hidden' name='_csrf' value=csrfToken)
+                input(type='text' name='tapeName' value=tapeName)
+                div(class='create-cancel-btn')
+                    button(type='submit' class='create-btn') Create
+                    a(href=`/users/${userId}/tapes` class='cancel-btn') Cancel
+        div(class='tapeListBtn')
+            each tape in tapes
+                a(class='button-30' href=`/users/${userId}/tapes/${tape.id}`)=tape.tapeName
+                form(action=`/users/${user.id}/tapes/${tape.id}/${playlist.Tape.id}` method='post')
+                                  button(class="delete" type='submit') Delete Song

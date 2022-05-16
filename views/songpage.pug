@@ -1,0 +1,31 @@
+extends nav 
+include utils.pug
+append head
+  link(rel='stylesheet' href='/stylesheets/songpage.css')
+block content
+    section
+        .box
+            img(src=`${song.songImg}`)
+            h2 #{song.name}
+                ul(style='list-style-type:none;')
+                    p Artist: #{song.artistName}
+                    p Album: #{song.albumName}
+                    p Release Date: #{song.releaseDate}
+                    p Times Played: #{song.listenCount}
+                playlist-btn
+                    form(action=`/songs/${song.id}` method='post' class='display-flex')
+                        label(for='add')
+                            select(name='tapeId' class='playlist-select')
+                                each tape in tapes
+                                    option(value=`${tape.id}`)=tape.tapeName
+                        button(class='add-btn' type='submit') Add to Playlist
+
+                //- .custom-select(style='width:200px;')
+                //-     form(action=`/songs/${song.id}` method='post' class='display-flex')
+                //-         label(for='add')
+                //-             select(name='tapeId' class='playlist-select')
+                //-                 each tape in tapes
+                //-                     option(value=`${tape.id}`)=tape.tapeName
+                //-         button(class='add-btn' type='submit') Add to Playlist
+        .box
+            iframe(width="1000" height="500" src=`${song.youtubeURL}` frameborder="0" allowfullscreen)

@@ -68,14 +68,6 @@ router.post('/users/:id/tapes', asyncHandler(async (req, res) => {
     }
 }))
 
-//delete tape
-router.delete('/users/:userId/tapes/:tapeId', asyncHandler(async(req,res) => {
-    const tapeId = req.params.tapeId
-    await db.Tape.destroy({
-        where: tapeId
-    });
-}))
-
 //update a tape name
 router.post('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
     const userId = req.params.userId;
@@ -95,5 +87,44 @@ router.post('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
     }
 }));
 
-module.exports = router;
+router.get('/users/:userId/tapes/:tapeId(\\d+)/delete', asyncHandler(async(req, res) => {
+    const userId = parseInt(req.params.userId, 10);
+    // const tape = await db.Tape.findByPk(req.params.tapeId);
+    const tapeId = parseInt(req.params.tapeId, 10);
+    res.render('delete', {userId, tapeId})
+}))
 
+router.post('/users/:userId/tapes/:tapeId(\\d+)/delete', asyncHandler(async (req, res) => {
+    const userId = parseInt(req.params.userId, 10);
+    const tapeId = req.params.tapeId;
+    console.log(tapeId)
+    const tape = await db.Tape.findByPk(tapeId);
+
+    await db.Playlist.destroy({
+            where: tape.id,
+            truncate: true
+        })
+    await tape.destroy();
+    res.redirect(`/users/${userId}/tapes`);
+}))
+
+//delete song
+router.post("/users/:userId/tapes/:tapeId/:id", asyncHandler(async (req, res) => {
+
+    const userId = req.params.userId;                
+    const tapeId = req.params.tapeId;
+    const songId = req.params.id;
+
+    const song = await db.Playlist.findOne({
+        where: { songId, tapeId }
+    });
+    await song.destroy();
+
+    res.redirect(`/users/${userId}/tapes/${tapeId}`);
+
+})
+);
+
+
+
+module.exports = router;

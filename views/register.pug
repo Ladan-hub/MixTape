@@ -1,0 +1,19 @@
+include utils.pug
+    link(rel='stylesheet' href='/stylesheets/regi.css')
+
+block content
+    +validationErrorSummary(errors)
+    .background
+        img.fit(src='https://wallpaperaccess.com/full/5046361.jpg')
+    form(action='/register' method='post')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        h3 Welcome to MixTape!
+        +field('User Name', 'username', user.username)
+        +field('Email Address', 'emailAddress', user.emailAddress)
+        +field('Password', 'password', user.password, 'password')
+        +field('Confirm Password', 'confirmPassword', '', 'password')
+        buttonbox
+            button.btn(type='submit') Register 
+            a.btn(href='/register') Clear
+            a.btn(href='/guest') Continue as a Guest
+            a.btn(href='/' class='btn') Already Have An Account?

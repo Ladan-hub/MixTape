@@ -15,7 +15,7 @@ const tapesRouter = require('./routes/tape');
 const aboutRouter = require('./routes/about');
 //const myTapesRouter = require('./routes/mytapes');
 const songlibraryRouter = require('./routes/songlibrary');
-
+const searchRouter = require('./routes/search');
 
 const csrf = require('csurf');
 const { restoreUser } = require('./auth');
@@ -58,10 +58,7 @@ app.use(songlibraryRouter);
 //app.use(myTapesRouter);
 app.use(homeRouter);
 app.use(aboutRouter);
-
-
-
-
+app.use(searchRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -78,8 +75,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
-
 
 module.exports = app;

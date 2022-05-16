@@ -1,0 +1,19 @@
+extends nav 
+append head
+  link(rel='stylesheet' href='/stylesheets/tapes-1.css')
+block content
+    section
+        .box
+            img(src=`${song.songImg}`)
+            h2 #{song.name}
+                ul(style='list-style-type:none;')
+                    p Artist: #{song.artistName}
+                    p Album: #{song.albumName}
+                    p Release Date: #{song.releaseDate}
+                    p Times Played: #{song.listenCount}
+                playlist-btn
+                    form(action=`/songs/${song.id}` method='post' class='display-flex')
+                    label(for='add')
+                        select(name='tapeId' class='playlist-select')
+                            each tape in tapes
+                                option(value=`${tape.id}`)=tape.tapeName

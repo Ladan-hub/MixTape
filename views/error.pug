@@ -1,6 +1,20 @@
-extends layout
-
+extends nav 
+include utils.pug
+append head
+  link(rel='stylesheet' href='/stylesheets/error.css')
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+    +validationErrorSummary(errors)
+    .background
+        img.fit(src='https://as2.ftcdn.net/v2/jpg/02/26/79/93/1000_F_226799327_f8C7rJAvDF9RG0Q78Und82UjFvTzbLy7.jpg')
+    section
+      .section-heading
+        .grid-container
+          .grid-x
+            .cell
+              h2 Error: page not found
+        //- .grid-container
+        //-   .grid-x.grid-padding-x
+        //-     .cell 
+        //-       h3=error.status
+        //-       pre #{error.stack}
+  

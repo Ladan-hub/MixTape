@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     body: JSON.stringify(body),
                     headers: { 'Content-Type': 'application/json' }
                 }).then(res => res)
-            return window.location.href = '/login';
+            return window.location.href;
             } catch (e) {
                 // custom error handler?
                 console.log(e)

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+
+html{
+    font-family: 'Proxima Nova';
+}
+section {
+    position: relative;
+    display: flex;
+    float: right;
+    width: 79%;
+    flex-direction: column;
+    padding: 0;
+    background: linear-gradient(0deg, hsla(0, 0%, 0%, 1) 0%, rgb(26, 16, 45) 50%, rgb(117, 97, 150) 100%);
+    animation: backgrounder 30s linear infinite;
+}
+.box{
+    max-width: 79%;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+img{
+    padding: 60px;
+    margin: 20px;
+    height: 400px;
+    width: 400px;
+}
+
+h2{
+    font-size: 30px;
+    color:azure;
+    opacity: 95%;
+    padding-bottom: 30px;
+    font-weight: 100;
+}
+
+p{
+    font-size: 18px;
+    color:azure;
+    opacity: 85%;
+    letter-spacing: 1px;
+    margin:1px;
+    left: 10px;
+    padding-top: 10px;
+}
+
+@media (min-width: 48rem) {
+    .grid-container {
+        padding: 0 20px;
+   }
+}
+.grid-container.full {
+    max-width: 100%;
+    padding: 0 10px;
+}
+@media (min-width: 48rem) {
+    .grid-container.full {
+        padding: 0 20px;
+   }
+}
+.grid-container .grid-x {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+@media (min-width: 48rem) {
+    .grid-container .grid-x {
+        flex-direction: row;
+        flex-wrap: wrap;
+   }
+}
+.grid-container .grid-x.align-left {
+    justify-content: flex-start;
+}
+.grid-container .grid-x.align-right {
+    justify-content: flex-end;
+}
+.grid-container .grid-x.align-justify {
+    justify-content: space-between;
+}
+
+.playlist-btn {
+    display: block;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-top: 30px;
+}
+
+.add-btn {
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: 400;
+    height: 40px;
+    padding: 0 1.6rem;
+    margin-left: 20px;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.add-btn:hover {
+    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+    transition-duration: .1s;
+}
+
+.playlist-select {
+    background-color: #fff;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 20px;
+    height: 40px;
+}

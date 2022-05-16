@@ -1,18 +1,29 @@
-extends layout.pug
-include utils.pug
+extends nav 
+append head
+  link(rel='stylesheet' href='/stylesheets/tapes-2.css')
 block content
-    div(class='tapes2')
-        div(class='update')
-        h1(class='tape2Title') Saved songs in your #{tape.tapeName}
-        form(class='newtapes' action=`/users/${user.id}/tapes/${tape.id}` method='post')
-            input(type='hidden' name='_csrf' value=csrfToken)
-            input(type='text' name='tapeName' value=tapeName id='tapeName')
-            div(class='create-cancel-btn')
-                button(type='submit' class='button-21') Update your tape name here!
-        div
-            h2 Check your songs
-        div(class="allSongLinks")
-            each playlist in playlists 
-                a(href=`/songs/${playlist.Song.id}`)
-                    img(class="allSongImages" src=playlist.Song.songImg)
-                    p #{playlist.Song.name}
+     section
+        .section-heading
+          .grid-container
+            .grid-x
+              .cell
+                h2 #{tape.tapeName}
+        .grid-container
+          .grid-x.grid-padding-x
+            .cell 
+                form(class='newtapes' action=`/users/${user.id}/tapes/${tape.id}` method='post')
+                    h3 Change your tape name here:
+                    input(type='hidden' name='_csrf' value=csrfToken)
+                    input(type='text' name='tapeName' value=tapeName class='tapetext')
+                    div(class='create-cancel-btn')
+                        button(type='submit' class='button1') Change
+                        button(class='button1')  
+                            a(href=`/users/${user.id}/tapes/${tape.id}/delete` class="button1" id=`delete-${tape.id}`) Delete Tape
+                h2 Check your songs:
+                    div(class="allSongLinks")
+                        each playlist in playlists 
+                            a(href=`/songs/${playlist.Song.id}`)
+                                img(class="allSongImages" src=playlist.Song.songImg)
+                                h4 #{playlist.Song.name}
+                                form(action=`/users/${user.id}/tapes/${tape.id}/${playlist.Song.id}` method='post')
+                                    button(class="btn" type='submit') Delete Song
