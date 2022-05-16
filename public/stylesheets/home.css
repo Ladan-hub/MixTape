@@ -1,14 +1,7 @@
-.recentReleases{
+.tophits, .recentReleases {
     height: 200px;
     width: 200px;
-    margin: 15px;
-}
-
-
-.tophits {
-    height: 200px;
-    width: 200px;
-    margin: 15px;
+    margin: 30px;
     transition: width 2s, height 2s, transform 2s;
 }
 

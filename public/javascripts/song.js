@@ -1,7 +1,3 @@
-
-
-
-
 const playlists = document.querySelectorAll('.playlist-button')
 
 // assume the class of button is playlist-btn

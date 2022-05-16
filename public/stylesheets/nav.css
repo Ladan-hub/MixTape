@@ -26,6 +26,7 @@ html {
     font-size: 20px;
     color: #818181;
     display: block;
+    padding-left: 40px;
   }
   
   /* Style links on mouse-over */
@@ -98,7 +99,7 @@ header {
 .search-box{
     position: fixed;
     top: 4%;
-    right: 20%;
+    right: 32%;
     z-index: 30;
   }
   .input-search{
@@ -112,6 +113,8 @@ header {
     border-radius: 25px;
     transition: all .5s ease-in-out;
     z-index: 4;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
   }
   .input-search::placeholder{
     color:rgba(255,255,255,.5);
@@ -122,8 +125,6 @@ header {
   .input-search{
     width: 300px;
     border-radius: 0px;
-    background-color: transparent;
-    border-bottom:1px solid rgba(255,255,255,.5);
   }
   .input-search:focus{
     color:rgba(255, 255, 255, 0.65);
@@ -135,7 +136,26 @@ header {
   }
   .input-search:focus ~ .btn-search {
     opacity: 0%;
+    background-color: transparent;
   }
+
+  .submitButton{
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #150c26;
+    opacity: 80%;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: 200;
+    height: 30px;
+    padding: 0 1.6rem;
+    margin-left: 20px;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  }
+  
   .welcomemessage{
     color:rgba(255, 255, 255, 0.65);
     position: fixed;
@@ -146,3 +166,4 @@ header {
     letter-spacing: 1px;
     font-weight: 100;
   }
+

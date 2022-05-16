@@ -1,5 +1,16 @@
-extends layout.pug
+extends nav 
 include utils.pug
+append head
+  link(rel='stylesheet' href='/stylesheets/tapes-2.css')
 block content
-    form(action=`/users/${userId}/tapes/${tapeId}/delete` method='post')
-        button(type='submit') Delete Tape
+    section
+        .section-heading
+          .grid-container
+            .grid-x
+              .cell
+                h2 Are you sure?
+        .grid-container
+          .grid-x.grid-padding-x
+            .cell 
+                form(action=`/users/${userId}/tapes/${tapeId}/delete` method='post' class='newtapes')
+                    button(type='submit' class='button1') Delete Tape

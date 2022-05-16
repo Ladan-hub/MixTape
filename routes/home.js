@@ -12,12 +12,12 @@ router.get("/home", async function (req, res, next) {
   // 1. query for the data -> the joint table which user has which songs?
 
   const topHits = await db.Song.findAll({
-    limit: 9,
+    limit: 12,
     order: [["listenCount", "DESC"]],
   });
 
   const recentReleases = await db.Song.findAll({
-    limit: 9,
+    limit: 12,
     order: [["releaseDate", "DESC"]],
   });
 

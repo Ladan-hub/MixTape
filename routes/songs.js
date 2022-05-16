@@ -26,7 +26,7 @@ router.get('/songs/:id', asyncHandler(async (req, res) => {
   });
 
   if (song) {
-    res.render("song", { id: req.params.id, song, tapes })
+    res.render("songpage", { id: req.params.id, song, tapes })
   } else {
     next(taskNotFoundError(req.params.id));
   }

@@ -12,7 +12,7 @@ router.get("/songs", async function (req, res, next) {
     // 1. query for all of the songs in the database 
   
     const allSongs = await db.Song.findAll({
-      order: [["releaseDate", "DESC"]],
+      order: [["releaseDate", "ASC"]],
     });
     //console.log(topHits[0].songImg,"HERE");
   

@@ -8,8 +8,6 @@ for (let i = 0; i < answerDeleteBtns.length; i++) {
         const answerId = e.target.id.split('-')[1];
         
         const userId = document.URL.split('/')[4];
-   
-        
         const res = await fetch(`/users/${userId}/tapes/${answer}`, {
             method: 'DELETE',
             headers: {

@@ -10,6 +10,7 @@ html
             title MixTape - #{title}
             meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
         block sidebar
+        if locals.authenticated
             main.main
                 aside.sidebar
                     nav.nav
@@ -20,7 +21,10 @@ html
                         li  
                             a(href='/songs') Songs 
                         li
-                            a(href=`/users/${userId}/tapes`) My Tapes
+                            a(href=`/users/${user.id}/tapes` class='playlist') My Tapes 
+                        li
+                            form(class='logout-form' action='/logout' method='post')
+                                a(href=`/` class='logout-btn' type='submit') Logout
 
                 header.top-bar
                 .grid-container.full
@@ -28,10 +32,36 @@ html
                         a.logo(href="/home") 
                             span Logo goes here
                     .search-box
-                        input.input-search(type='text' placeholder='Find music...')
-                        button(class="submitButton" type="submit") Submit 
+                        form(action="/search" method="post")
+                          input.input-search(type='text' name="searchInput" placeholder= 'Find music...')
+                          button(class="submitButton" type="submit") Submit 
                     .welcomemessage 
                         span Welcome Back, #{user.username}!
+        else
+            main.main
+                aside.sidebar
+                    nav.nav
+                    .wrap
+                    ul
+                        li  
+                            a(href='/home') Home
+                        li  
+                            a(href='/songs') Songs 
+                        li
+                            a(href='/') Login
+                        li  
+                            a(href='/register') Register
+
+                header.top-bar
+                .grid-container.full
+                    .grid-x.align-justify
+                        a.logo(href="/home") 
+                            span Logo goes here
+                    .search-box
+                        form(action="/search" method="post")
+                          input.input-search(type='text' name="searchInput" placeholder='Find music...')
+                          button(class="submitButton" type="submit") Submit 
+                    .welcomemessage 
+                        span Welcome, Guest!
 
         block content
-

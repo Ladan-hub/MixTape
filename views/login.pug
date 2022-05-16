@@ -1,0 +1,18 @@
+include utils.pug
+
+    link(rel='stylesheet' href='/stylesheets/login.css')
+
+block content
+    +validationErrorSummary(errors)
+    .background
+        img.fit(src='https://wallpaperaccess.com/full/5046361.jpg')
+    form(action='/' method='post' class='loginPage')
+        input(type='hidden' name='_csrf' value=csrfToken)
+        h3 Welcome Back!
+        +field('Email Address', 'emailAddress', emailAddress)
+        +field('Password', 'password', null, 'password')
+        buttonbox
+            button.btn(type='submit') Login
+            a.btn(href='/cancel') Clear
+            a.btn(href='/register') Sign up
+            a.btn(href='/guest' ) Continue as a Guest

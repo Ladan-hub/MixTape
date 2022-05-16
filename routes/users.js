@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 
 router.get('/register', csrfProtection, (req, res) => {
   const user = db.User.build();
-  res.render('user-register', {
+  res.render('register', {
     title: 'Register',
     user,
     csrfToken: req.csrfToken(),
@@ -64,7 +64,7 @@ router.post('/register', csrfProtection, userValidators,
       res.redirect('/');
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
-      res.render('user-register', {
+      res.render('register',{
         title: 'Register',
         user,
         errors,
@@ -75,7 +75,7 @@ router.post('/register', csrfProtection, userValidators,
 
 
 router.get('/', csrfProtection, (req, res) => {
-  res.render('user-login', {
+  res.render('login', {
     title: 'Login',
     csrfToken: req.csrfToken(),
   });
@@ -111,16 +111,14 @@ router.post('/', csrfProtection, loginValidators,
       errors.push('Login failed for the provided email address and password');
     } else {
       errors = validatorErrors.array().map((error) => error.msg);
-      res.render('user-login', {
+      res.render('login', {
         title: 'Login',
         emailAddress: user.email,
         errors,
         csrfToken: req.csrfToken(),
       });
     }
-
   }));
-
 
 router.post('/logout', (req, res) => {
   logoutUser(req, res);
