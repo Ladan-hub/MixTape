@@ -12,4 +12,6 @@ block content
                     a(href=`/users/${userId}/tapes` class='cancel-btn') Cancel
         div(class='tapeListBtn')
             each tape in tapes
-                a(class='button-30' href=`/users/${userId}/tapes/${tape.id}`)=tape.tapeName
+                a(class='button-30' id=`tape-${tape.id}` href=`/users/${userId}/tapes/${tape.id}` value=tape.id)=tape.tapeName
+                a(href=`/users/${userId}/tapes/${tape.id}/delete` class="delete-btn" id=`delete-${tape.id}`) Delete Tape
+    //- script(src='/javascripts/delete.js' type='module')
