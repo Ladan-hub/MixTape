@@ -68,6 +68,7 @@ router.post('/users/:id/tapes', asyncHandler(async (req, res) => {
     }
 }))
 
+
 //update a tape name
 router.post('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
     const userId = req.params.userId;
@@ -87,6 +88,7 @@ router.post('/users/:userId/tapes/:tapeId', asyncHandler(async (req, res) => {
     }
 }));
 
+//delete tape name
 router.get('/users/:userId/tapes/:tapeId(\\d+)/delete', asyncHandler(async(req, res) => {
     const userId = parseInt(req.params.userId, 10);
     // const tape = await db.Tape.findByPk(req.params.tapeId);
@@ -105,7 +107,9 @@ router.post('/users/:userId/tapes/:tapeId(\\d+)/delete', asyncHandler(async (req
             truncate: true
         })
     await tape.destroy();
+
     res.redirect(`/users/${userId}/tapes`);
+
 }))
 
 //delete song
@@ -124,7 +128,5 @@ router.post("/users/:userId/tapes/:tapeId/:id", asyncHandler(async (req, res) =>
 
 })
 );
-
-
 
 module.exports = router;

@@ -23,9 +23,4 @@ block content
                 button.dropbtn Select a Tape
                     .dropdown-content
                         each tape in tapes
-                            a(href=`/users/${userId}/tapes/${tape.id}`)=tape.tapeName         
-            //- div(class='tapelist')
-            //-     each tape in tapes
-            //-         a(class='button-30' href=`/users/${userId}/tapes/${tape.id}`)=tape.tapeName
-                //- form(action=`/users/${user.id}/tapes/${tape.id}/${playlist.Tape.id}` method='post')
-                //-     button(class="delete" type='submit') Delete Song
+                            a(href=`/users/${userId}/tapes/${tape.id}`)=tape.tapeName
