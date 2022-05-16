@@ -125,6 +125,24 @@ router.post('/users/:userId/tapes/:tapeId(\\d+)/delete', asyncHandler(async (req
     res.redirect(`/users/${userId}/tapes`)
 }))
 
+//delete song
+router.post("/users/:userId/tapes/:tapeId/:id", asyncHandler(async (req, res) => {
+
+    const userId = req.params.userId;                
+    const tapeId = req.params.tapeId;
+    const songId = req.params.id;
+
+    const song = await db.Playlist.findOne({
+        where: { songId, tapeId }
+    });
+    await song.destroy();
+
+    res.redirect(`/users/${userId}/tapes/${tapeId}`);
+
+})
+);
+
+
 
 module.exports = router;
 

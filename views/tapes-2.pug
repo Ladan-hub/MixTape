@@ -16,3 +16,5 @@ block content
                 a(href=`/songs/${playlist.Song.id}`)
                     img(class="allSongImages" src=playlist.Song.songImg)
                     p #{playlist.Song.name}
+                    form(action=`/users/${user.id}/tapes/${tape.id}/${playlist.Song.id}` method='post')
+                        button(class="delete" type='submit') Delete Song
